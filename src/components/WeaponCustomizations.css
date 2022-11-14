@@ -1,0 +1,22 @@
+ul{
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+  border: solid 1px black;
+  min-height: 250px;
+  width: 300px;
+  border-radius: 5px;
+  padding:0 15px;
+  padding-bottom: 50px;
+}
+
+ul li{
+    margin-top: 5px;
+    padding:5px;
+    border-radius: 5px;
+    background-color: rgba(44, 44, 41, 0.5);
+}
+
+h3{
+  text-align: left;
+}
