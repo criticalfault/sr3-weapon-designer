@@ -1,4 +1,4 @@
-resource "digitalocean_app" "spell-gen" {
+resource "digitalocean_app" "weapon-gen" {
   spec {
     name   = "weapon-designer"
     region = "nyc"
