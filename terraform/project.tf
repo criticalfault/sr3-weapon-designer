@@ -1,10 +1,6 @@
-resource "digitalocean_project" "nullsheen" {
-  name        = "nullsheen"
-  description = "nullsheen.com project"
-  purpose     = "Web Application"
-  environment = "Production"
-  resources   = [
-  digitalocean_app.weapon-designer.urn,
-  digitalocean_domain.nullsheen.urn
-  ]
+resource "digitalocean_project_resources" "nullsheen" {
+  project = data.terraform_remote_state.matrix.outputs.project_id
+  resources = [
+    digitalocean_app.weapon-gen.urn
+    ]
 }
