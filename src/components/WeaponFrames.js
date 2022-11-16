@@ -11,7 +11,7 @@
       "Mounts":[],
       "FCU":"1",
       "DPV":"25",
-      "Options":["Ammo Loading (break action)", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (SA)", "Flechette Only", "Improved Ammo Capacity", "Improved Concealability 1", "Improved Concealability 2", "Increased Power 1 ", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)"]
+      "Options":["Ammo Loading (break action)", "Ceramic Components", "Firing Mode (SA)", "Flechette Only", "Improved Ammo Capacity", "Improved Concealability", "Increased Power (Up to 1)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)"]
     },
     "Light Pistol":{
       "Power":6,
@@ -24,7 +24,7 @@
       "Mounts":["Barrel","Top"],
       "FCU":1.5,
       "DPV":90,
-      "Options":["Ammo Loading (no belt)", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (SS, BF or SA/BF only)", "Flechette Only", "Improved Concealability 1", "Improved Concealability 2", "Improved Ammo Capacity", "Improved FCU 1", "Improved FCU 2", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Weight Decrease 1", "Weight Decrease 2"]
+      "Options":["Ammo Loading (no belt)", "Ceramic Components", "Firing Mode (SS, BF or SA/BF only)", "Flechette Only", "Improved Concealability", "Improved Ammo Capacity", "Improved FCU (Up to 2)", "Increased Power (Up to 1)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Weight Decrease (Up to 2)"]
     },
     "Machine Pistol":{
       "Power":6,
@@ -37,7 +37,7 @@
       "Mounts":["Barrel","Top"],
       "FCU":1,
       "DPV":180,
-      "Options":["Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (FA or BF/FA only)", "Flechette Only", "Heavy Barrel", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Improved FCU 2", "Improved FCU 3", "Improved FCU 4", "Improved FCU 5", "Improved FCU 6", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2"]
+      "Options":["Ceramic Components", "Firing Mode (FA or BF/FA only)", "Flechette Only", "Heavy Barrel", "Improved Concealability", "Improved FCU (Up to 6)", "Increased Power (Up to 1)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 1)", "Selectable Clip", "Weight Decrease (Up to 2)"]
     },
     "Heavy Pistol":{
       "Power":9,
@@ -50,7 +50,7 @@
       "Mounts":["Barrel","Top"],
       "FCU":2,
       "DPV":120,
-      "Options":["Ammo Loading (break action, internal magazine and cylinder only)", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (SS, BF or SA/BF only)", "Flechette Only", "Heavy Barrel", "Improved Ammo Capacity", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Improved FCU 2", "Improved FCU 3", "Improved FCU 4", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6"]
+      "Options":["Ammo Loading (break action, internal magazine and cylinder only)", "Ceramic Components", "Firing Mode (SS, BF or SA/BF only)", "Flechette Only", "Heavy Barrel", "Improved Ammo Capacity", "Improved Concealability", "Improved FCU (Up to 4)", "Increased Power (Up to 1)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Weight Decrease (Up to 6)"]
     },
     "Submachine Gun":{
       "Power":6,
@@ -63,7 +63,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":1.5,
       "DPV":100,
-      "Options":["Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (BF, FA, BF/FA or SA/BF/FA only)", "Heavy Barrel", "High-Velocity Capability", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Improved FCU 2", "Improved FCU 3", "Improved FCU 4", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (up to 2 levels)", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6", "Weight Decrease 7", "Weight Decrease 8"]
+      "Options":["Ceramic Components", "Firing Mode (BF, FA, BF/FA or SA/BF/FA only)", "Heavy Barrel", "High-Velocity Capability", "Improved Concealability", "Improved FCU (Up to 4)", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 2)", "Selectable Clip", "Weight Decrease (Up to 8)"]
     },
     "Shotgun":{
       "Power":8,
@@ -76,7 +76,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":2.5,
       "DPV":130,
-      "Options":["Ammo Loading (break action or clip only)", "Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (SS, BF or SA/BF only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Improved FCU 2", "Improved FCU 3", "Improved FCU 4", "Increased Power 1", "Increased Power 2", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6"]
+      "Options":["Ammo Loading (break action or clip only)", "Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components", "Firing Mode (SS, BF or SA/BF only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved Concealability", "Improved FCU (Up to 4)", "Increased Power (Up to 2)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 1)", "Selectable Clip", "Weight Decrease (Up to 6)"]
     },
     "Taser":{
       "Power":10,
@@ -89,7 +89,7 @@
       "Mounts":["Top"],
       "FCU":1,
       "DPV":200,
-      "Options":["Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3",, "Improved Concealability 1", "Improved Concealability 2", "Increased Power 1", "Increased Power 2", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Weight Decrease 1", "Weight Decrease 2"]
+      "Options":["Ceramic Components", "Improved Concealability", "Increased Power (Up to 2)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Weight Decrease (Up to 2)"]
     },
     "Sport Rifle":{
       "Power":7,
@@ -102,7 +102,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":2.5,
       "DPV":125,
-      "Options":["Ammo Loading (clip only)", "Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown", "Firing Mode (SS or SA/BF only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU (up to 4 levels)", "Increased Power 1", "Increased Power 2", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6"]
+      "Options":["Ammo Loading (clip only)", "Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components", "Easy Breakdown", "Firing Mode (SS or SA/BF only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved Concealability", "Improved FCU (up to 4)", "Increased Power (Up to 2)", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease (Up to 6)"]
     },
     "Assault Rifle":{
       "Power":8,
@@ -115,7 +115,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":3,
       "DPV":225,
-      "Options":["Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown","Heavy Barrel", "High-Velocity Capability", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (up to 2 levels)", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6", "Weight Decrease 7", "Weight Decrease 8"]
+      "Options":["Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components", "Easy Breakdown","Heavy Barrel", "High-Velocity Capability", "Improved Concealability", "Improved FCU 1", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (up to 2)", "Selectable Clip", "Weight Decrease (Up to 8)"]
     },
     "Sniper Rifle":{
       "Power":14,
@@ -128,7 +128,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":2.5,
       "DPV":800,
-      "Options":["Ammo Loading (clip only)", "Barrel Extension", "Barrel Reduction", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown", "Firing Mode (SS only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved FCU (up to 4 levels)", "Increased Power 1", "Increased Power 2", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6"]
+      "Options":["Ammo Loading (clip only)", "Barrel Extension", "Barrel Reduction", "Ceramic Components", "Easy Breakdown", "Firing Mode (SS only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved FCU (Up to 4)", "Increased Power (Up to 2)", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 1)", "Selectable Clip", "Weight Decrease (Up to 6)"]
     },
     "Light Machine Gun":{
       "Power":7,
@@ -141,7 +141,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":4,
       "DPV":425,
-      "Options":["Ammo Loading (belt)", "Firing Mode (SA, BF, FA, SA/BF or SA/BF/FA only)", "Heavy Barrel", "High-Velocity Capability", "Increased Power 1", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (up to 2 levels)", "Selectable Clip", "Weight Decrease (up to 12 levels)"]
+      "Options":["Ammo Loading (belt)", "Firing Mode (SA, BF, FA, SA/BF or SA/BF/FA only)", "Heavy Barrel", "High-Velocity Capability", "Increased Power (Up to 1)", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 2)", "Selectable Clip", "Weight Decrease (Up to 12)"]
     },
     "Medium Machine Gun":{
       "Power":9,
@@ -154,7 +154,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":4,
       "DPV":700,
-      "Options":["Ammo Loading (belt only)", "Heavy Barrel", "High-Velocity Capability", "Increased Power 1", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Recoil Compensation 2", "Selectable Clip", "Weight Decrease (up to 16 levels)"]
+      "Options":["Ammo Loading (belt only)", "Heavy Barrel", "High-Velocity Capability", "Increased Power (Up to 1)", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 2)", "Selectable Clip", "Weight Decrease (Up to 16)"]
     },
     "Heavy Machine Gun":{
       "Power":10,
@@ -167,7 +167,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":4,
       "DPV":1000,
-      "Options":["Ammo Loading (belt only)", "Heavy Barrel", "High-Velocity Capability", "Increased Power 1", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Recoil Compensation 2", "Selectable Clip", "Weight Decrease (up to 16 levels)"]
+      "Options":["Ammo Loading (belt only)", "Heavy Barrel", "High-Velocity Capability", "Increased Power (Up to 1)", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 2)", "Selectable Clip", "Weight Decrease (Up to 16)"]
     },
     "Assault Cannon":{
       "Power":18,
@@ -180,7 +180,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":4,
       "DPV":1400,
-      "Options":["Ammo Loading (belt only)", "Heavy Barrel", "Increased Power 1", "Increased Power 2", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Weight Decrease (up to 12 levels)"]
+      "Options":["Ammo Loading (belt only)", "Heavy Barrel", "Increased Power (Up to 2)", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (Up to 1)", "Weight Decrease (Up to 12)"]
     }
   }
 export default weaponFrames;

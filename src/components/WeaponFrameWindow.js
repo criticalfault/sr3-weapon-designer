@@ -39,6 +39,11 @@ return (
             <div className='col'>DPV: {props.weaponDPV}</div>
         </div>
         <div className='row'>
+            <div className='col'>
+                <span>Extra:</span><pre>{props.weaponExtra}</pre>
+            </div>
+        </div>
+        <div className='row'>
             <div>Final Cost: {props.weaponFinalCost}¥</div>
         </div>
     </div>

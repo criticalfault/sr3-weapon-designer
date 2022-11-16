@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
@@ -6,6 +5,7 @@ import WeaponFrameWindow from './components/WeaponFrameWindow.js';
 import WeaponCustomization from './components/WeaponCustomizations';
 import weaponFrames from './components/WeaponFrames.js';
 import WeaponOptions from './components/WeaponOptions.js';
+import Modifications from './components/WeaponModifications.js'
 
 function App() {
   const [weaponFrame, setWeaponFrame] = useState("Hold-Out Pistol");
@@ -22,7 +22,8 @@ function App() {
   const [weaponRecoilComp, setWeaponRecoilComp] = useState(0);
   const [weaponFinalCost, setWeaponFinalCost] = useState(weaponDPV*5);
   const [weaponOptions, setWeaponOptions] = useState([]);
-
+  const [weaponExtra, setWeaponExtra] = useState('');
+  
   
   const onChangeWeaponFrame = (event) =>{
     setWeaponFrame(event.target.value);
@@ -37,9 +38,8 @@ function App() {
     setWeaponFCU(weaponFrames[event.target.value].FCU);
     setWeaponDPV(weaponFrames[event.target.value].DPV);
     setWeaponFinalCost(weaponFrames[event.target.value].DPV*5);
+    setWeaponOptions([]);
   }
-
-
 
   function onUpdateCustomizationsHandler(options){
     let Power = weaponFrames[weaponFrame].Power;
@@ -48,27 +48,30 @@ function App() {
     let DP = weaponFrames[weaponFrame].DPV;
     let FCU = weaponFrames[weaponFrame].FCU;
     let Concealability = weaponFrames[weaponFrame].Concealability;
-
-    if(options != undefined){
+    let Extra = "";
+    if(options !== undefined){
       options.forEach( (opt) => {
-        Object.keys(WeaponOptions[opt]).map((key)=> {
-          if(key == "DP"){
+        Object.keys(WeaponOptions[opt]).map( (key) => {
+          if(key === "DP"){
             DP = parseInt(DP) + parseInt(WeaponOptions[opt].DP);
           }
-          if(key == 'FCU'){
+          if(key === 'FCU'){
             FCU = (parseFloat(FCU) + parseFloat(WeaponOptions[opt].FCU));
           }
-          if(key == "Concealability"){
+          if(key === "Concealability"){
             Concealability = Concealability + WeaponOptions[opt].Concealability;
           }
-          if(key == "Weight"){
+          if(key === "Weight"){
             Weight = (parseFloat(Weight) + parseFloat(WeaponOptions[opt].Weight));
           }
-          if(key == "RC"){
+          if(key === "RC"){
             RC = parseInt(RC) + parseInt(WeaponOptions[opt].RC);
           }
-          if(key == "Power"){
+          if(key === "Power"){
             Power = Power + WeaponOptions[opt].Power;
+          }
+          if(key === "Extra"){
+            Extra += WeaponOptions[opt].Extra+"\n";
           }
         });
       });
@@ -84,6 +87,7 @@ function App() {
     setWeaponFCU(FCU);
     setWeaponDPV(DP);
     setWeaponFinalCost(DP*5);
+    setWeaponExtra(Extra);
   }
 
 
@@ -122,11 +126,12 @@ function App() {
             weaponFinalCost={weaponFinalCost}
             weaponRecoilComp={weaponRecoilComp}
             weaponOptions={weaponOptions}
+            weaponExtra={weaponExtra}
           />
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrame} Modifications={Modifications} Options={weaponFrames[weaponFrame].Options} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
         </div>
       </div>
     </div>

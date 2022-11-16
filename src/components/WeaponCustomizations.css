@@ -20,3 +20,11 @@ ul li{
 h3{
   text-align: left;
 }
+
+.handle{
+  cursor: grab;
+}
+
+.rightPadd{
+  padding-right: 5px;
+}
