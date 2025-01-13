@@ -89,7 +89,7 @@
       "Mounts":["Top"],
       "FCU":1,
       "DPV":200,
-      "Options":["Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3",, "Improved Concealability 1", "Improved Concealability 2", "Increased Power 1", "Increased Power 2", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Weight Decrease 1", "Weight Decrease 2"]
+      "Options":["Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Improved Concealability 1", "Improved Concealability 2", "Increased Power 1", "Increased Power 2", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Weight Decrease 1", "Weight Decrease 2"]
     },
     "Sport Rifle":{
       "Power":7,

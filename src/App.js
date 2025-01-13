@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
@@ -49,25 +48,25 @@ function App() {
     let FCU = weaponFrames[weaponFrame].FCU;
     let Concealability = weaponFrames[weaponFrame].Concealability;
 
-    if(options != undefined){
+    if(options !== undefined){
       options.forEach( (opt) => {
         Object.keys(WeaponOptions[opt]).map((key)=> {
-          if(key == "DP"){
+          if(key === "DP"){
             DP = parseInt(DP) + parseInt(WeaponOptions[opt].DP);
           }
-          if(key == 'FCU'){
+          if(key === 'FCU'){
             FCU = (parseFloat(FCU) + parseFloat(WeaponOptions[opt].FCU));
           }
-          if(key == "Concealability"){
+          if(key === "Concealability"){
             Concealability = Concealability + WeaponOptions[opt].Concealability;
           }
-          if(key == "Weight"){
+          if(key === "Weight"){
             Weight = (parseFloat(Weight) + parseFloat(WeaponOptions[opt].Weight));
           }
-          if(key == "RC"){
+          if(key === "RC"){
             RC = parseInt(RC) + parseInt(WeaponOptions[opt].RC);
           }
-          if(key == "Power"){
+          if(key === "Power"){
             Power = Power + WeaponOptions[opt].Power;
           }
         });
