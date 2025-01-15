@@ -38,8 +38,6 @@ function App() {
     setWeaponFinalCost(weaponFrames[event.target.value].DPV*5);
   }
 
-
-
   function onUpdateCustomizationsHandler(options){
     let Power = weaponFrames[weaponFrame].Power;
     let RC = weaponFrames[weaponFrame].RC??0;
@@ -125,7 +123,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} WeaponOptions={WeaponOptions} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
         </div>
       </div>
     </div>

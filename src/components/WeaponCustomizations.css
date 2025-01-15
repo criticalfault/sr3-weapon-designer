@@ -20,3 +20,11 @@ ul li{
 h3{
   text-align: left;
 }
+
+#Customizations li span {
+  float:right;
+}
+
+.partsToInstall{
+  cursor: pointer;
+}

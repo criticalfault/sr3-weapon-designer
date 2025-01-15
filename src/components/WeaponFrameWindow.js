@@ -12,9 +12,6 @@ const damageLevel = {
     8:"D (Stun)"
 }
 
-
-
-
 return (
     <div className='col text-left borderLinesSub'>
         <div className="row">
