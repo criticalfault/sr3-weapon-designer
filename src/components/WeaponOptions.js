@@ -80,6 +80,13 @@ const Options = {
         "Weight":.5,
         "RC":1
     },
+    "High-Velocity Capability":{
+        "Name":"High-Velocity Capability",
+        "DP":100,
+        "FCU":-1.5,
+        "Weight":1,
+        "extra":"Fires 6 round bursts and auto fires 18 rounds per Combat Phase"
+    },
     "Improved Ammo Capacity":{
         "Name":"Improved Ammo Capacity"
 
@@ -96,6 +103,42 @@ const Options = {
         "DP":25,
         "FCU":-.25,
         "Concealability":1,
+        "Weight":0
+    },
+    "Improved FCU 1":{
+        "Name":"Improved FCU 1",
+        "DP":10,
+        "FCU":-.25,
+        "Weight":0
+    },
+    "Improved FCU 2":{
+        "Name":"Improved FCU 2",
+        "DP":10,
+        "FCU":-.25,
+        "Weight":0
+    },
+    "Improved FCU 3":{
+        "Name":"Improved FCU 3",
+        "DP":10,
+        "FCU":-.25,
+        "Weight":0
+    },
+    "Improved FCU 4":{
+        "Name":"Improved FCU 4",
+        "DP":10,
+        "FCU":-.25,
+        "Weight":0
+    },
+    "Improved FCU 5":{
+        "Name":"Improved FCU 5",
+        "DP":10,
+        "FCU":-.25,
+        "Weight":0
+    },
+    "Improved FCU 6":{
+        "Name":"Improved FCU 6",
+        "DP":10,
+        "FCU":-.25,
         "Weight":0
     },
     "Increased Power 1":{

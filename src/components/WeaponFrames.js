@@ -115,7 +115,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":3,
       "DPV":225,
-      "Options":["Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown","Heavy Barrel", "High-Velocity Capability", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation (up to 2 levels)", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6", "Weight Decrease 7", "Weight Decrease 8"]
+      "Options":["Barrel Extension", "Barrel Reduction", "Bullpup Configuration", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown","Heavy Barrel", "High-Velocity Capability", "Improved Concealability 1", "Improved Concealability 2", "Improved FCU 1", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Recoil Compensation 2", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6", "Weight Decrease 7", "Weight Decrease 8"]
     },
     "Sniper Rifle":{
       "Power":14,
@@ -128,7 +128,7 @@
       "Mounts":["Barrel","Top","Under"],
       "FCU":2.5,
       "DPV":800,
-      "Options":["Ammo Loading (clip only)", "Barrel Extension", "Barrel Reduction", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown", "Firing Mode (SS only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved FCU (up to 4 levels)", "Increased Power 1", "Increased Power 2", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6"]
+      "Options":["Ammo Loading (clip only)", "Barrel Extension", "Barrel Reduction", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Easy Breakdown", "Firing Mode (SS only)", "Heavy Barrel", "Improved Ammo Capacity", "Improved FCU 1", "Improved FCU 2", "Improved FCU 3", "Improved FCU 4", "Increased Power 1", "Increased Power 2", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)", "Recoil Compensation 1", "Selectable Clip", "Weight Decrease 1", "Weight Decrease 2", "Weight Decrease 3", "Weight Decrease 4", "Weight Decrease 5", "Weight Decrease 6"]
     },
     "Light Machine Gun":{
       "Power":7,
