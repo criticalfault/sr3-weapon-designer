@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './WeaponCustomizations.css';
 
 const WeaponCustomization = (props) => {
-    const [installedParts, setInstalledParts] = useState([]);
+    // const [installedParts, setInstalledParts] = useState(props.installedParts);
 
     // const damageLevel = {
     //     1:"L",
@@ -17,18 +17,18 @@ const WeaponCustomization = (props) => {
 
     function installPart(key) {
       const partToInstall = {...props.WeaponOptions[key]};
-      const installedKeys = Object.keys(installedParts);
+      const installedKeys = Object.keys(props.installedParts);
       
       
       let found = false;
       for (const key2 of installedKeys) {
-        if(installedParts[key2].Name === key){
+        if(props.installedParts[key2].Name === key){
           found = true;
         }
       }
 
       if(found === false){
-        setInstalledParts(prevInstalledParts => [...prevInstalledParts, partToInstall]);
+        props.installPart(prevInstalledParts => [...prevInstalledParts, partToInstall]);
       }      
     }
 
@@ -57,7 +57,7 @@ const WeaponCustomization = (props) => {
             <div className='col'>
                 <h3>Installed</h3>
                 <ul id='Installed'>
-                  { installedParts.map((part, index) => (
+                  { props.installedParts.map((part, index) => (
                     <li key={index}>{part.Name}</li>
                     )
                   )

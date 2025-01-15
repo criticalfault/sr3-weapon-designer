@@ -11,7 +11,7 @@
       "Mounts":[],
       "FCU":"1",
       "DPV":"25",
-      "Options":["Ammo Loading (break action)", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (SA)", "Flechette Only", "Improved Ammo Capacity", "Improved Concealability 1", "Improved Concealability 2", "Increased Power 1 ", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)"]
+      "Options":["Ammo Loading (break action)", "Ceramic Components 1", "Ceramic Components 2", "Ceramic Components 3", "Firing Mode (SA)", "Flechette Only", "Improved Ammo Capacity", "Improved Concealability 1", "Improved Concealability 2", "Increased Power 1", "Melee Hardening", "Metahuman Design (Troll)", "Metahuman Design (Dwarf)"]
     },
     "Light Pistol":{
       "Power":6,
