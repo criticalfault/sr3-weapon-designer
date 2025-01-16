@@ -13,7 +13,7 @@ const damageLevel = {
 }
 
 return (
-    <div className='col text-left borderLinesSub'>
+    <div className='col text-left borderLinesSub' id='weaponFrame'>
         <div className="row">
             <div>Weapon Frame: {props.weaponFrame}</div>
         </div>

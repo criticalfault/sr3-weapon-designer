@@ -2,9 +2,10 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import WeaponFrameWindow from './components/WeaponFrameWindow.js';
-import WeaponCustomization from './components/WeaponCustomizations';
+import WeaponCustomization from './components/WeaponCustomizations.js';
 import weaponFrames from './components/WeaponFrames.js';
 import WeaponOptionsPossible from './components/WeaponOptions.js';
+import WeaponModifications from './components/WeaponModifications.js';
 
 function App() {
   const [weaponFrame, setWeaponFrame] = useState("Hold-Out Pistol");
@@ -97,7 +98,7 @@ function App() {
       <br></br>
       <div className='container'>
         <div className="row">
-          <div className='col'>
+          <div className='col-12 col-sm-6'>
             <label>
               Weapon Frame: <select onChange={onChangeWeaponFrame}>
                 {
@@ -108,7 +109,7 @@ function App() {
               </select>
             </label>
           </div>
-          <div className='col'>
+          <div className='col-12 col-sm-6'>
           <WeaponFrameWindow
             weaponFrame={weaponFrame}
             weaponPower={weaponPower}
@@ -128,7 +129,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} WeaponModifications={WeaponModifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
         </div>
       </div>
     </div>

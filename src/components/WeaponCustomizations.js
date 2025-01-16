@@ -27,6 +27,8 @@ const WeaponCustomization = (props) => {
       props.installPart([...editedParts]);
     }
 
+    console.log(props.WeaponModifications);
+
     return(
         <div className='row'>
             <h2>Options</h2>
@@ -34,8 +36,8 @@ const WeaponCustomization = (props) => {
                 <h3>Possible Design Options</h3>
                 <ul id="Customizations">
                 {
-                    props.Options.map((key, index) => {
-                      return (
+                  props.Options.map((key, index) => {
+                    return (
                         <li key={key} onClick={() => { installPart(key) }} className="partsToInstall">{key} 
                           <span> 
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right-circle" viewBox="0 0 16 16">
@@ -47,6 +49,11 @@ const WeaponCustomization = (props) => {
                     }
                   )
                 }   
+                </ul>
+                <h3>Modifications</h3>
+                <ul id="Modifications">
+                 
+                  
                 </ul>
             </div>
             <div className='col'>
