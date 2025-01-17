@@ -327,8 +327,7 @@ const Modifications = {
         "FCU":0,
         "DP":40,
         "RC":1,
-        "Concealability":-1,
-        "BannedFrames":['Rifle','Shotgun']
+        "Concealability":-1
     },
     "Folding Stock":{
         "Name":"Folding Stock",
@@ -340,8 +339,7 @@ const Modifications = {
         "Weight":.5,
         "FCU":0,
         "DP":40,
-        "RC":1,
-        "BannedFrames":['Rifle','Shotgun']
+        "RC":1
     },
     "Shock Pads":{
         "Name":"Folding Stock",
@@ -353,8 +351,7 @@ const Modifications = {
         "Weight":2.5,
         "FCU":0,
         "DP":40,
-        "RC":1,
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser']
+        "RC":1
     },
     "Hip Pads":{
         "Name":"Folding Stock",
@@ -366,8 +363,7 @@ const Modifications = {
         "Weight":2,
         "FCU":0,
         "DP":40,
-        "RC":1,
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser','Sport Rifle','Assault Rifle','Sniper Rifle']
+        "RC":1
     },
     "Sawed-Off Shotgun Barrel (Kit Installed)":{
         "Name":"Sawed-Off Shotgun Barrel (Kit Installed)",
@@ -380,8 +376,7 @@ const Modifications = {
         "FCU":0,
         "DP":8,
         "Concealability":2,
-        "Extra":"+1 TN on all shots",
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser','Sport Rifle','Assault Rifle','Sniper Rifle']
+        "Extra":"+1 TN on all shots"
     },
     "Sawed-Off Shotgun Barrel (Shop Installed)":{
         "Name":"Sawed-Off Shotgun Barrel (Shop Installed)",
@@ -393,8 +388,7 @@ const Modifications = {
         "Weight":-1,
         "FCU":0,
         "DP":8,
-        "Concealability":2,
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser','Sport Rifle','Assault Rifle','Sniper Rifle']
+        "Concealability":2
     },
     "Imaging Systems (Flashlight)":{
         "Name":"Imaging Systems (Flashlight)",
@@ -438,7 +432,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":100,
+        "DP":100
     },
     "Imaging Systems (Magnification 2)":{
         "Name":"Imaging Systems (Magnification 2)",
@@ -449,7 +443,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":160,
+        "DP":160
     },
     "Imaging Systems (Magnification 3)":{
         "Name":"Imaging Systems (Magnification 3)",
@@ -460,7 +454,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":240,
+        "DP":240
     },
     "Imaging Systems (Thermographic)":{
         "Name":"Imaging Systems (Thermographic)",
@@ -471,7 +465,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":300,
+        "DP":300
     },
     "Underbarrel Weapon (Bayonet)":{
         "Name":"Underbarrel Weapon (Bayonet)",
@@ -482,8 +476,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.75,
         "FCU":-.25,
-        "DP":10,
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser']
+        "DP":10
     },
     "Underbarrel Weapon (Gapple Gun)":{
         "Name":"Underbarrel Weapon (Gapple Gun)",
@@ -505,8 +498,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":2,
         "FCU":-.25,
-        "DP":360,
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser']
+        "DP":360
     },
     "Underbarrel Weapon (Flamethrower)":{
         "Name":"Underbarrel Weapon (Flamethrower)",
@@ -517,8 +509,7 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":0,
         "FCU":-.25,
-        "DP":240,
-        "BannedFrames":['Hold-Out Pistol','Light Pistol','Machine Pistol','Submachine Gun','Taser']
+        "DP":240
     }
 }
 export default Modifications;
