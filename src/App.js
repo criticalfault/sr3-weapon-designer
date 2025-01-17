@@ -2,9 +2,10 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import WeaponFrameWindow from './components/WeaponFrameWindow.js';
-import WeaponCustomization from './components/WeaponCustomizations';
+import WeaponCustomization from './components/WeaponCustomizations.js';
 import weaponFrames from './components/WeaponFrames.js';
 import WeaponOptionsPossible from './components/WeaponOptions.js';
+import WeaponModifications from './components/WeaponModifications.js';
 
 function App() {
   const [weaponFrame, setWeaponFrame] = useState("Hold-Out Pistol");
@@ -21,7 +22,8 @@ function App() {
   const [weaponRecoilComp, setWeaponRecoilComp] = useState(0);
   const [weaponFinalCost, setWeaponFinalCost] = useState(weaponDPV*5);
   const [installedParts, setInstalledParts] = useState([]);
-  
+  const [weaponNotes, setWeaponNotes] = useState([]);
+  const [weaponBuildNotes, setWeaponBuildNotes] = useState([]);
   const onChangeWeaponFrame = (event) =>{
     setWeaponFrame(event.target.value);
     setWeaponPower(weaponFrames[event.target.value].Power);
@@ -36,10 +38,11 @@ function App() {
     setWeaponDPV(weaponFrames[event.target.value].DPV);
     setWeaponFinalCost(weaponFrames[event.target.value].DPV*5);
     setInstalledParts([]);
+    setWeaponNotes([]);
+    setWeaponBuildNotes([])
   }
 
   useEffect(function(){
-    console.log(installedParts)
     onUpdateCustomizationsHandler(installedParts)
   },[installedParts])
 
@@ -50,11 +53,10 @@ function App() {
     let DP = weaponFrames[weaponFrame].DPV;
     let FCU = weaponFrames[weaponFrame].FCU;
     let Concealability = weaponFrames[weaponFrame].Concealability;
-
+    let Notes = [];
+    let BuildNotes = [];
     if(options !== undefined){
       options.forEach( (opt) => {
-          console.log(opt);
-
           if(opt.hasOwnProperty('DP')){
             DP = parseInt(DP) + parseInt(opt.DP);
           }
@@ -73,6 +75,19 @@ function App() {
           if(opt.hasOwnProperty('Power')){
             Power = Power + opt.Power;
           }
+          if(opt.hasOwnProperty('Extra')){
+            Notes.push(opt.Extra);
+          }
+          if(opt.hasOwnProperty('InstallTime')){
+            let buildSegment = {
+              "Name":opt.Name,
+              "InstallTime":opt.InstallTime,
+              "InstallTN":opt.InstallTN,
+              "Skill":opt.Skill,
+              "Tools":opt.Tools
+            }
+            BuildNotes.push(buildSegment);
+          }
       });
     }
     setWeaponPower(Power);
@@ -86,6 +101,8 @@ function App() {
     setWeaponFCU(FCU);
     setWeaponDPV(DP);
     setWeaponFinalCost(DP*5);
+    setWeaponNotes(Notes);
+    setWeaponBuildNotes(BuildNotes);
   }
 
 
@@ -97,7 +114,7 @@ function App() {
       <br></br>
       <div className='container'>
         <div className="row">
-          <div className='col'>
+          <div className='col-12 col-sm-6'>
             <label>
               Weapon Frame: <select onChange={onChangeWeaponFrame}>
                 {
@@ -108,7 +125,7 @@ function App() {
               </select>
             </label>
           </div>
-          <div className='col'>
+          <div className='col-12 col-sm-6'>
           <WeaponFrameWindow
             weaponFrame={weaponFrame}
             weaponPower={weaponPower}
@@ -124,11 +141,13 @@ function App() {
             weaponFinalCost={weaponFinalCost}
             weaponRecoilComp={weaponRecoilComp}
             weaponOptions={WeaponOptionsPossible}
+            weaponNotes={weaponNotes}
+            weaponBuildNotes={weaponBuildNotes}
           />
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} WeaponModifications={WeaponModifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
         </div>
       </div>
     </div>
