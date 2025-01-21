@@ -147,7 +147,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrame} Options={weaponFrames[weaponFrame].Options} WeaponModifications={WeaponModifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrames[weaponFrame]} Options={weaponFrames[weaponFrame].Options} WeaponModifications={WeaponModifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
         </div>
       </div>
     </div>
