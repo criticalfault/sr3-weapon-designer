@@ -12,9 +12,20 @@ const damageLevel = {
     8:"D (Stun)"
 }
 
+function showNegativeAsRed(num){
+    if(num < 0){
+        return ( <span className='negative'>{num}</span>);
+    }else{
+        return ( <span>{num}</span>);
+    }
+}
+
 return (
     <div>
     <div className='col text-left borderLinesSub' id='weaponFrame'>
+        <div className="row">
+            <div>Weapon Name: <input value={props.weaponName} onChange={(e) => props.setWeaponName(e.target.value)} /></div>
+        </div>
         <div className="row">
             <div>Weapon Frame: {props.weaponFrame}</div>
         </div>
@@ -33,7 +44,7 @@ return (
            
         </div>
         <div className='row'>
-            <div className='col'>FCU: {props.weaponFCU} </div>
+            <div className='col'>FCU: {showNegativeAsRed(props.weaponFCU)} </div>
             <div className='col'>DPV: {props.weaponDPV}</div>
         </div>
         <div className='row'>
