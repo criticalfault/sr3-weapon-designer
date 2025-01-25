@@ -8,6 +8,7 @@ import WeaponOptionsPossible from './components/WeaponOptions.js';
 import WeaponModifications from './components/WeaponModifications.js';
 
 function App() {
+  const [weaponName, setWeaponName] = useState('Temp Name');
   const [weaponFrame, setWeaponFrame] = useState("Hold-Out Pistol");
   const [weaponPower, setWeaponPower] = useState(4);
   const [weaponDamage, setWeaponDamage] = useState(1);
@@ -24,6 +25,7 @@ function App() {
   const [installedParts, setInstalledParts] = useState([]);
   const [weaponNotes, setWeaponNotes] = useState([]);
   const [weaponBuildNotes, setWeaponBuildNotes] = useState([]);
+  const [weaponBuild,setWeaponBuild] = useState({});
   const onChangeWeaponFrame = (event) =>{
     setWeaponFrame(event.target.value);
     setWeaponPower(weaponFrames[event.target.value].Power);
@@ -103,6 +105,74 @@ function App() {
     setWeaponFinalCost(DP*5);
     setWeaponNotes(Notes);
     setWeaponBuildNotes(BuildNotes);
+
+
+    setWeaponBuild({
+      "Power":Power,
+      "WeaponDamage":weaponFrames[weaponFrame]['Damage Level'],
+      "WeaponModes":weaponFrames[weaponFrame].Mode,
+      "WeaponConcealability":Concealability,
+      "WeaponWeight":Weight,
+      "WeaponLoad":weaponFrames[weaponFrame]["Ammo Load"],
+      "WeaponAmmoCap":weaponFrames[weaponFrame]["Ammo Cap"],
+      "WeaponRecoilComp":RC,
+      "WeaponFCU":FCU,
+      "WeaponDP":DP,
+      "WeaponFinalCost":DP*5,
+      "WeaponNotes":Notes,
+      "WeaponBuildNotes":BuildNotes
+
+    })
+  }
+
+
+  const SaveWeapon = () => {
+    let weapon = weaponBuild;
+
+    let characterJSON = JSON.stringify(weapon);
+    const blob = new Blob([characterJSON], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    // Create a link element and trigger the download
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "SRCustomWeapon.json";
+    link.click();
+  
+    // Clean up by revoking the object URL
+    URL.revokeObjectURL(url);
+    // try {
+    //   fathom.trackEvent("Save Weapon"); // eslint-disable-line
+    // } catch (err) {
+    //   console.log(err);
+    //   console.log("Fathom wasn't found. Prolly a blocker");
+    // }
+  };
+
+  const LoadWeapon = (event) => {
+    // const file = event.target.files[0];
+    // const reader = new FileReader();
+    // reader.onload = (e) => {
+    //   try{
+    //     const fileData = e.target.result;
+    //     const characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(fileData));
+    //     props.loadCharacter(characterToLoad);
+    //     console.log(characterToLoad.edition)
+    //     props.ChangeEdition(characterToLoad.edition);
+    //     setOpen(false);
+    //   }catch(err){
+    //     console.log(err);
+    //     console.log("Something went wrong trying to load a character");
+    //     alert("Unable to load character. Please ensure that the character is a json file you made with this site. PDFs cannot be read unfortunately.");
+    //   }
+    // }    
+    // reader.readAsText(file); 
+    // try{
+    //   fathom.trackEvent('Load Character'); // eslint-disable-line
+    // }catch(err){
+    //     console.log(err);
+    //     console.log("Fathom wasn't found. Prolly a blocker");
+    // }
   }
 
 
@@ -124,9 +194,17 @@ function App() {
                 }
               </select>
             </label>
+            <br></br>
+            <div>Still pending, don't rely on this yet!
+              <button class="btn btn-primary" tabindex="0" onClick={SaveWeapon}>Save</button>&nbsp;&nbsp;
+              {/* <button class="btn btn-primary" tabindex="0" onClick={LoadWeapon}>Load</button>&nbsp;&nbsp; */}
+              {/* <button class="btn btn-primary" tabindex="0" onClick={SaveCharacter}>Local Storage Save/Load</button> */}
+            </div>
           </div>
           <div className='col-12 col-sm-6'>
           <WeaponFrameWindow
+            setWeaponName={setWeaponName} 
+            weaponName={weaponName}
             weaponFrame={weaponFrame}
             weaponPower={weaponPower}
             weaponDamage={weaponDamage}

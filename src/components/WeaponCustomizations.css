@@ -47,3 +47,7 @@ h3{
 .partsToInstall{
   cursor: pointer;
 }
+
+.negative{
+  color:red;
+}
