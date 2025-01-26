@@ -79,7 +79,7 @@ const Modifications = {
         "FCU":-.5,
         "DP":"frame base DPV"
     },
-    "Smartgun System 2 (Internal)":{
+    "Smartgun System 2 (Internal) - Hold-Out Pistol":{
         "Name":"Smartgun System 2 (Internal)",
         "Skill":"Electronics B/R, (Weapon) B/R",
         "InstallTime":"24 Hours",
@@ -88,7 +88,150 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"frame base DPV x 1.5"
+        "DP":"38"
+    },
+    "Smartgun System 2 (Internal) - Light Pistol":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"135"
+    },
+    "Smartgun System 2 (Internal) - Machine Pistol":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"270"
+    },
+    "Smartgun System 2 (Internal) - Heavy Pistol":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"180"
+    },
+    "Smartgun System 2 (Internal) - Submachine Gun":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"150"
+    },
+    "Smartgun System 2 (Internal) - Shotgun":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"195"
+    },
+    "Smartgun System 2 (Internal) - Taser":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"300"
+    },
+    "Smartgun System 2 (Internal) - Sport Rifle":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"188"
+    },
+    "Smartgun System 2 (Internal) - Assault Rifle":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"338"
+    },
+    "Smartgun System 2 (Internal) - Sniper Rifle":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"1200"
+    },
+    "Smartgun System 2 (Internal) - Light Machine Gun":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"638"
+    },
+    "Smartgun System 2 (Internal) - Medium Machine Gun":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"1050"
+    },
+    "Smartgun System 2 (Internal) - Heavy Machine Gun":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"1500"
+    },
+    "Smartgun System 2 (Internal) - Assault Cannon":{
+        "Name":"Smartgun System 2 (Internal)",
+        "Skill":"Electronics B/R, (Weapon) B/R",
+        "InstallTime":"24 Hours",
+        "InstallTN":5,
+        "Mount":"None",
+        "Tools":"Shop",
+        "Weight":.5,
+        "FCU":-.5,
+        "DP":"2100"
     },
     "Smartgun System (External)":{
         "Name": "Smartgun System (External)",

@@ -53,43 +53,43 @@ return (
         {
             props.weaponMounts.map((item, index) => {
                 return (    
-                        <div className='row'>
-                            <div key={index} className='col'>{item}: Nothing</div>
+                        <div key={index} className='row'>
+                            <div className='col'>{item}: Nothing</div>
                         </div>
                         )
             })
         }
         </div>
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div className="accordion" id="accordionExample">
+                <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingOne">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded={"true"} aria-controls="collapseOne">
                         Weapon Notes
                     </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
+                    <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
                             
                             <ul>
                                 {props.weaponNotes.map((item,index)=>{
-                                    return ( <li>{item}</li>)
+                                    return ( <li key={index}>{item}</li>)
                                 })}
                             </ul>
                             
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingTwo">
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Build Notes
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
+                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
                             <ul>
                                 {props.weaponBuildNotes.map((item,index)=>{
-                                    return ( <li>
+                                    return ( <li key={index}>
                                                 {item.Name} <ul>
                                                         <li>TN:{item.InstallTN} / {item.InstallTime}</li> 
                                                         <li>Requires {item.Tools} - {item.Skill}</li>
