@@ -7,7 +7,7 @@ const WeaponCustomization = (props) => {
       const installedKeys = Object.keys(props.installedParts);
       var partToInstall = {};
       if(type === "Mod"){
-        partToInstall = {...props.WeaponModifications[key]};
+        partToInstall = {...props.Modifications[key]};
       }else if(type === "Opt"){
         partToInstall = {...props.WeaponOptions[key]};
       }
@@ -61,10 +61,12 @@ const WeaponCustomization = (props) => {
                   <h3>Modifications</h3>
                   <ul id="Modifications"> 
                     {
-                      Object.keys(props.WeaponModifications).map((key) => {
-                        let mod = props.WeaponModifications[key];
+                      props.WeaponModifications.map((key) => {
+                        console.log(key);
+                        console.log(props.Modifications);
+                        let mod = props.Modifications[key];
                         if(props.weaponFrame.Mounts.indexOf(mod.Mount) === -1 && mod.Mount !== 'None'){
-                          return(<span></span>);
+                          
                         }else{
                           return (<li key={key} onClick={() => { installPart(key, 'Mod') }} className="btn btn-secondary">{key}
                                     <span> 
@@ -85,7 +87,7 @@ const WeaponCustomization = (props) => {
                   { props.installedParts.map((part, index) => (
                     <li key={index} onClick={() => { uninstallPart(part.Name) }} className='btn btn-info'> 
                       <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-circle" viewBox="0 0 16 16">
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
                         </svg>

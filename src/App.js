@@ -6,6 +6,8 @@ import WeaponCustomization from './components/WeaponCustomizations.js';
 import weaponFrames from './components/WeaponFrames.js';
 import WeaponOptionsPossible from './components/WeaponOptions.js';
 import WeaponModifications from './components/WeaponModifications.js';
+import LoadWeapon from "./components/LoadWeapon";
+import Modifications from './components/WeaponModifications.js';
 
 function App() {
   const [weaponName, setWeaponName] = useState('Temp Name');
@@ -41,12 +43,12 @@ function App() {
     setWeaponFinalCost(weaponFrames[event.target.value].DPV*5);
     setInstalledParts([]);
     setWeaponNotes([]);
-    setWeaponBuildNotes([])
+    setWeaponBuildNotes([]);
   }
 
   useEffect(function(){
     onUpdateCustomizationsHandler(installedParts)
-  },[installedParts])
+  },[installedParts,weaponName])
 
   function onUpdateCustomizationsHandler(options){
     let Power = weaponFrames[weaponFrame].Power;
@@ -106,9 +108,10 @@ function App() {
     setWeaponNotes(Notes);
     setWeaponBuildNotes(BuildNotes);
 
-
     setWeaponBuild({
+      "WeaponName":weaponName,
       "Power":Power,
+      "WeaponFrame":weaponFrame,
       "WeaponDamage":weaponFrames[weaponFrame]['Damage Level'],
       "WeaponModes":weaponFrames[weaponFrame].Mode,
       "WeaponConcealability":Concealability,
@@ -120,61 +123,31 @@ function App() {
       "WeaponDP":DP,
       "WeaponFinalCost":DP*5,
       "WeaponNotes":Notes,
-      "WeaponBuildNotes":BuildNotes
-
+      "WeaponBuildNotes":BuildNotes,
+      "WeaponInstalledParts":installedParts
     })
   }
 
+  const handleLoadWeapon = (weapon) => {
 
-  const SaveWeapon = () => {
-    let weapon = weaponBuild;
-
-    let characterJSON = JSON.stringify(weapon);
-    const blob = new Blob([characterJSON], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-
-    // Create a link element and trigger the download
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "SRCustomWeapon.json";
-    link.click();
-  
-    // Clean up by revoking the object URL
-    URL.revokeObjectURL(url);
-    // try {
-    //   fathom.trackEvent("Save Weapon"); // eslint-disable-line
-    // } catch (err) {
-    //   console.log(err);
-    //   console.log("Fathom wasn't found. Prolly a blocker");
-    // }
-  };
-
-  const LoadWeapon = (event) => {
-    // const file = event.target.files[0];
-    // const reader = new FileReader();
-    // reader.onload = (e) => {
-    //   try{
-    //     const fileData = e.target.result;
-    //     const characterToLoad = fixOlderCharactersMissingProperties(JSON.parse(fileData));
-    //     props.loadCharacter(characterToLoad);
-    //     console.log(characterToLoad.edition)
-    //     props.ChangeEdition(characterToLoad.edition);
-    //     setOpen(false);
-    //   }catch(err){
-    //     console.log(err);
-    //     console.log("Something went wrong trying to load a character");
-    //     alert("Unable to load character. Please ensure that the character is a json file you made with this site. PDFs cannot be read unfortunately.");
-    //   }
-    // }    
-    // reader.readAsText(file); 
-    // try{
-    //   fathom.trackEvent('Load Character'); // eslint-disable-line
-    // }catch(err){
-    //     console.log(err);
-    //     console.log("Fathom wasn't found. Prolly a blocker");
-    // }
+    console.log(weapon)
+    //Set the Weapon up upon load
+    setWeaponFrame(weapon.WeaponFrame);
+    setWeaponPower(weapon.WeaponPower);
+    setWeaponDamage(weapon.WeaponDamage);
+    setWeaponModes(weapon.WeaponModes);
+    setWeaponConcealability(weapon.WeaponConcealability);
+    setWeaponWeight(weapon.WeaponWeight);
+    setWeaponLoad(weapon.WeaponAmmoLoad);
+    setWeaponAmmoCap(weapon.WeaponAmmoCap);
+    setWeaponRecoilComp(weapon.WeaponRC);
+    setWeaponFCU(weapon.WeaponFCU);
+    setWeaponDPV(weapon.WeaponDP);
+    setWeaponFinalCost(weapon.WeaponDP*5);
+    setWeaponNotes(weapon.WeaponNotes);
+    setWeaponBuildNotes(weapon.WeaponBuildNotes);
+    setInstalledParts(weapon.WeaponInstalledParts);
   }
-
 
   return (
     <div className="App">
@@ -186,7 +159,7 @@ function App() {
         <div className="row">
           <div className='col-12 col-sm-6'>
             <label>
-              Weapon Frame: <select onChange={onChangeWeaponFrame}>
+              Weapon Frame: <select onChange={onChangeWeaponFrame} value={weaponFrame}>
                 {
                   Object.keys(weaponFrames).map((key, index) => {
                     return (<option key={index} name={key}>{key}</option>)
@@ -195,10 +168,11 @@ function App() {
               </select>
             </label>
             <br></br>
-            <div>Still pending, don't rely on this yet!
-              <button class="btn btn-primary" tabindex="0" onClick={SaveWeapon}>Save</button>&nbsp;&nbsp;
-              {/* <button class="btn btn-primary" tabindex="0" onClick={LoadWeapon}>Load</button>&nbsp;&nbsp; */}
-              {/* <button class="btn btn-primary" tabindex="0" onClick={SaveCharacter}>Local Storage Save/Load</button> */}
+            <div className='alert alert-danger'>Still pending, don't rely on this yet!
+            <LoadWeapon
+              weaponBuild={weaponBuild}
+              loadWeapon={handleLoadWeapon}
+            />
             </div>
           </div>
           <div className='col-12 col-sm-6'>
@@ -225,7 +199,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrames[weaponFrame]} Options={weaponFrames[weaponFrame].Options} WeaponModifications={WeaponModifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrames[weaponFrame]} Options={weaponFrames[weaponFrame].Options} Modifications={WeaponModifications} WeaponModifications={weaponFrames[weaponFrame].Modifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
         </div>
       </div>
     </div>
