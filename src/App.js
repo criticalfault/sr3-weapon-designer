@@ -47,86 +47,88 @@ function App() {
   }
 
   useEffect(function(){
+    function onUpdateCustomizationsHandler(options){
+      let Power = weaponFrames[weaponFrame].Power;
+      let RC = weaponFrames[weaponFrame].RC??0;
+      let Weight = weaponFrames[weaponFrame].Weight
+      let DP = weaponFrames[weaponFrame].DPV;
+      let FCU = weaponFrames[weaponFrame].FCU;
+      let Concealability = weaponFrames[weaponFrame].Concealability;
+      let Notes = [];
+      let BuildNotes = [];
+      if(options !== undefined){
+        options.forEach( (opt) => {
+            if(opt.hasOwnProperty('DP')){
+              DP = parseInt(DP) + parseInt(opt.DP);
+            }
+            if(opt.hasOwnProperty('FCU')){
+              FCU = (parseFloat(FCU) + parseFloat(opt.FCU));
+            }
+            if(opt.hasOwnProperty('Concealability')){
+              Concealability = Concealability + opt.Concealability;
+            }
+            if(opt.hasOwnProperty('Weight')){
+              Weight = (parseFloat(Weight) + parseFloat(opt.Weight));
+            }
+            if(opt.hasOwnProperty('RC')){
+              RC = parseInt(RC) + parseInt(opt.RC);
+            }
+            if(opt.hasOwnProperty('Power')){
+              Power = Power + opt.Power;
+            }
+            if(opt.hasOwnProperty('Extra')){
+              Notes.push(opt.Extra);
+            }
+            if(opt.hasOwnProperty('InstallTime')){
+              let buildSegment = {
+                "Name":opt.Name,
+                "InstallTime":opt.InstallTime,
+                "InstallTN":opt.InstallTN,
+                "Skill":opt.Skill,
+                "Tools":opt.Tools
+              }
+              BuildNotes.push(buildSegment);
+            }
+        });
+      }
+      setWeaponPower(Power);
+      setWeaponDamage(weaponFrames[weaponFrame]['Damage Level']);
+      setWeaponModes(weaponFrames[weaponFrame].Mode);
+      setWeaponConcealability(Concealability);
+      setWeaponWeight(Weight);
+      setWeaponLoad(weaponFrames[weaponFrame]["Ammo Load"]);
+      setWeaponAmmoCap(weaponFrames[weaponFrame]["Ammo Cap"]);
+      setWeaponRecoilComp(RC);
+      setWeaponFCU(FCU);
+      setWeaponDPV(DP);
+      setWeaponFinalCost(DP*5);
+      setWeaponNotes(Notes);
+      setWeaponBuildNotes(BuildNotes);
+
+      setWeaponBuild({
+        "WeaponName":weaponName,
+        "Power":Power,
+        "WeaponFrame":weaponFrame,
+        "WeaponDamage":weaponFrames[weaponFrame]['Damage Level'],
+        "WeaponModes":weaponFrames[weaponFrame].Mode,
+        "WeaponConcealability":Concealability,
+        "WeaponWeight":Weight,
+        "WeaponLoad":weaponFrames[weaponFrame]["Ammo Load"],
+        "WeaponAmmoCap":weaponFrames[weaponFrame]["Ammo Cap"],
+        "WeaponRecoilComp":RC,
+        "WeaponFCU":FCU,
+        "WeaponDP":DP,
+        "WeaponFinalCost":DP*5,
+        "WeaponNotes":Notes,
+        "WeaponBuildNotes":BuildNotes,
+        "WeaponInstalledParts":installedParts
+      })
+    }
+
     onUpdateCustomizationsHandler(installedParts)
   },[installedParts,weaponName])
 
-  function onUpdateCustomizationsHandler(options){
-    let Power = weaponFrames[weaponFrame].Power;
-    let RC = weaponFrames[weaponFrame].RC??0;
-    let Weight = weaponFrames[weaponFrame].Weight
-    let DP = weaponFrames[weaponFrame].DPV;
-    let FCU = weaponFrames[weaponFrame].FCU;
-    let Concealability = weaponFrames[weaponFrame].Concealability;
-    let Notes = [];
-    let BuildNotes = [];
-    if(options !== undefined){
-      options.forEach( (opt) => {
-          if(opt.hasOwnProperty('DP')){
-            DP = parseInt(DP) + parseInt(opt.DP);
-          }
-          if(opt.hasOwnProperty('FCU')){
-            FCU = (parseFloat(FCU) + parseFloat(opt.FCU));
-          }
-          if(opt.hasOwnProperty('Concealability')){
-            Concealability = Concealability + opt.Concealability;
-          }
-          if(opt.hasOwnProperty('Weight')){
-            Weight = (parseFloat(Weight) + parseFloat(opt.Weight));
-          }
-          if(opt.hasOwnProperty('RC')){
-            RC = parseInt(RC) + parseInt(opt.RC);
-          }
-          if(opt.hasOwnProperty('Power')){
-            Power = Power + opt.Power;
-          }
-          if(opt.hasOwnProperty('Extra')){
-            Notes.push(opt.Extra);
-          }
-          if(opt.hasOwnProperty('InstallTime')){
-            let buildSegment = {
-              "Name":opt.Name,
-              "InstallTime":opt.InstallTime,
-              "InstallTN":opt.InstallTN,
-              "Skill":opt.Skill,
-              "Tools":opt.Tools
-            }
-            BuildNotes.push(buildSegment);
-          }
-      });
-    }
-    setWeaponPower(Power);
-    setWeaponDamage(weaponFrames[weaponFrame]['Damage Level']);
-    setWeaponModes(weaponFrames[weaponFrame].Mode);
-    setWeaponConcealability(Concealability);
-    setWeaponWeight(Weight);
-    setWeaponLoad(weaponFrames[weaponFrame]["Ammo Load"]);
-    setWeaponAmmoCap(weaponFrames[weaponFrame]["Ammo Cap"]);
-    setWeaponRecoilComp(RC);
-    setWeaponFCU(FCU);
-    setWeaponDPV(DP);
-    setWeaponFinalCost(DP*5);
-    setWeaponNotes(Notes);
-    setWeaponBuildNotes(BuildNotes);
-
-    setWeaponBuild({
-      "WeaponName":weaponName,
-      "Power":Power,
-      "WeaponFrame":weaponFrame,
-      "WeaponDamage":weaponFrames[weaponFrame]['Damage Level'],
-      "WeaponModes":weaponFrames[weaponFrame].Mode,
-      "WeaponConcealability":Concealability,
-      "WeaponWeight":Weight,
-      "WeaponLoad":weaponFrames[weaponFrame]["Ammo Load"],
-      "WeaponAmmoCap":weaponFrames[weaponFrame]["Ammo Cap"],
-      "WeaponRecoilComp":RC,
-      "WeaponFCU":FCU,
-      "WeaponDP":DP,
-      "WeaponFinalCost":DP*5,
-      "WeaponNotes":Notes,
-      "WeaponBuildNotes":BuildNotes,
-      "WeaponInstalledParts":installedParts
-    })
-  }
+  
 
   const handleLoadWeapon = (weapon) => {
 
@@ -199,7 +201,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <WeaponCustomization weaponFrame={weaponFrames[weaponFrame]} Options={weaponFrames[weaponFrame].Options} Modifications={WeaponModifications} WeaponModifications={weaponFrames[weaponFrame].Modifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible} UpdateWeaponFrameWindow={onUpdateCustomizationsHandler}    />
+          <WeaponCustomization weaponFrame={weaponFrames[weaponFrame]} Options={weaponFrames[weaponFrame].Options} Modifications={WeaponModifications} WeaponModifications={weaponFrames[weaponFrame].Modifications} installPart={setInstalledParts} installedParts={installedParts} WeaponOptions={WeaponOptionsPossible}  />
         </div>
       </div>
     </div>

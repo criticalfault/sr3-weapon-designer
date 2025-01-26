@@ -17,14 +17,16 @@ const Options = {
         "DP":15,
         "FCU": -.5,
         "Weight": .25,
-        "Concealability":-2
+        "Concealability":-2,
+        "IncompatiableWith":["Barrel Reduction"]
     },
     "Barrel Reduction":{
         "Name":"Barrel Reduction",
         "DP":8,
         "FCU": -.5,
         "Weight": -.25,
-        "Concealability":2
+        "Concealability":2,
+        "IncompatiableWith":["Barrel Extension"]
     },
     "Bullpup Configuration":{
         "Name":"Bullpup Configuration",
@@ -35,26 +37,17 @@ const Options = {
         "RC":1,
         "invalidWith":"Improved Concealability"
     },
-    "Ceramic Components 1":{
-        "Name":"Ceramic Components 1",
+    "Ceramic Components":{
+        "Name":"Ceramic Components",
         "DP":20,
         "FCU":-.25,
         "Weight":-.1,
-        "Extra":"Increase the Concealability rating of firearms with ceramic components by +2 per level when attempting to avoid detection by MAD systems"
-    },
-    "Ceramic Components 2":{
-        "Name":"Ceramic Components 2",
-        "DP":20,
-        "FCU":-.25,
-        "Weight":-.1,
-        "Extra":"Increase the Concealability rating of firearms with ceramic components by +2 per level when attempting to avoid detection by MAD systems"
-    },
-    "Ceramic Components 3":{
-        "Name":"Ceramic Components 3",
-        "DP":20,
-        "FCU":-.25,
-        "Weight":-.1,
-        "Extra":"At level 3, the gun is composed entirely of ceramic and is undetectable by MAD systems."
+        "HasLevels":true,
+        "MaxLevels":3,
+        "Extra":["Increase the Concealability rating of firearms with ceramic components by +2 per level when attempting to avoid detection by MAD systems",
+            "Increase the Concealability rating of firearms with ceramic components by +4 per level when attempting to avoid detection by MAD systems",
+            "At level 3, the gun is composed entirely of ceramic and is undetectable by MAD systems."
+        ]
     },
     "Easy Breakdown":{
         "Name":"Easy Breakdown",
@@ -91,54 +84,49 @@ const Options = {
         "Name":"Improved Ammo Capacity"
 
     },
-    "Improved Concealability 1":{
+    "Improved Concealability":{
         "Name":"Improved Concealability 1",
         "DP":25,
         "FCU":-.25,
         "Concealability":1,
-        "Weight":0
-    },
-    "Improved Concealability 2":{
-        "Name":"Improved Concealability 2",
-        "DP":25,
-        "FCU":-.25,
-        "Concealability":1,
+        "HasLevels":true,
+        "MaxLevels":2,
         "Weight":0
     },
     "Improved FCU 1":{
         "Name":"Improved FCU 1",
         "DP":10,
-        "FCU":-.25,
+        "FCU":.25,
         "Weight":0
     },
     "Improved FCU 2":{
         "Name":"Improved FCU 2",
         "DP":10,
-        "FCU":-.25,
+        "FCU":.25,
         "Weight":0
     },
     "Improved FCU 3":{
         "Name":"Improved FCU 3",
         "DP":10,
-        "FCU":-.25,
+        "FCU":.25,
         "Weight":0
     },
     "Improved FCU 4":{
         "Name":"Improved FCU 4",
         "DP":10,
-        "FCU":-.25,
+        "FCU":.25,
         "Weight":0
     },
     "Improved FCU 5":{
         "Name":"Improved FCU 5",
         "DP":10,
-        "FCU":-.25,
+        "FCU":.25,
         "Weight":0
     },
     "Improved FCU 6":{
         "Name":"Improved FCU 6",
         "DP":10,
-        "FCU":-.25,
+        "FCU":.25,
         "Weight":0
     },
     "Increased Power 1":{
