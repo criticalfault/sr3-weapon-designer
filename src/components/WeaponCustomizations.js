@@ -15,6 +15,8 @@ const WeaponCustomization = (props) => {
       
       let found = false;
       let Incompatiable = false;
+      let mountUsed = false;
+      let mountsUsed = [];
       for (const key2 of installedKeys) {
         if(props.installedParts[key2].Name === key){
           found = true;
@@ -24,11 +26,17 @@ const WeaponCustomization = (props) => {
           Incompatiable = true;
           toast(props.installedParts[key2].Name+" Incompatiable with "+key);
         }
+        if(props.installedParts[key2].hasOwnProperty('Mount') && props.installedParts[key2].Mount !== "None"){
+          mountsUsed.push(props.installedParts[key2].Mount);
+        }
       }
 
+      if(found === false && mountsUsed.indexOf(partToInstall.Mount) !== -1){
+        mountUsed = true;
+        toast(partToInstall.Name+" uses "+partToInstall.Mount+". Which is full");
+      }
 
-
-      if(found === false && Incompatiable === false){
+      if(found === false && Incompatiable === false && mountUsed === false){
         props.installPart(prevInstalledParts => [...prevInstalledParts, partToInstall]);
       }
     }
@@ -53,6 +61,7 @@ const WeaponCustomization = (props) => {
             })
           }  </label>);
       }
+
     }
 
     return(
@@ -95,7 +104,7 @@ const WeaponCustomization = (props) => {
                       props.WeaponModifications.map((key) => {
                         let mod = props.Modifications[key];
                         if(props.weaponFrame.Mounts.indexOf(mod.Mount) === -1 && mod.Mount !== 'None'){
-                          
+                          return;
                         }else{
                           return (<li key={key} onClick={() => { installPart(key, 'Mod') }} className="btn btn-secondary">{key}
                                     <span> 

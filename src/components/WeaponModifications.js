@@ -8,7 +8,8 @@ const Modifications = {
         "Tools":"Kit/Shop",
         "Weight":0,
         "FCU":0,
-        "DP":20
+        "DP":20,
+        "IncompatiableWith":[]
     },
     "Embossing/Engraving":{
         "Name":"Embossing/Engraving",
@@ -19,7 +20,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":0,
         "FCU":0,
-        "DP":20
+        "DP":20,
+        "IncompatiableWith":[]
     },
     "Gas Vent II":{
         "Name":"Gas Vent II",
@@ -32,7 +34,7 @@ const Modifications = {
         "FCU":-.5,
         "DP":90,
         "RC":2,
-        "IncompatiableWith":["Gas Vent III"]
+        "IncompatiableWith":["Gas Vent IV","Gas Vent III"]
     },
     "Gas Vent III":{
         "Name":"Gas Vent III",
@@ -45,7 +47,7 @@ const Modifications = {
         "FCU":-.75,
         "DP":140,
         "RC":3,
-        "IncompatiableWith":[],
+        "IncompatiableWith":["Gas Vent IV","Gas Vent II"],
     },
     "Gas Vent IV":{
         "Name":"Gas Vent IV",
@@ -58,7 +60,7 @@ const Modifications = {
         "FCU":-1,
         "DP":200,
         "RC":4,
-        "IncompatiableWith":[],
+        "IncompatiableWith":["Gas Vent III","Gas Vent II"],
     },
     "Safe Target System":{
         "Name":"Safe Target System",
@@ -563,7 +565,7 @@ const Modifications = {
         "DP":8,
         "Concealability":2,
         "Extra":"+1 TN on all shots",
-        "IncompatiableWith":[]
+        "IncompatiableWith":["Sawed-Off Shotgun Barrel (Shop Installed)", "Barrel Extension", "Barrel Reduction"] 
     },
     "Sawed-Off Shotgun Barrel (Shop Installed)":{
         "Name":"Sawed-Off Shotgun Barrel (Shop Installed)",
@@ -576,7 +578,7 @@ const Modifications = {
         "FCU":0,
         "DP":8,
         "Concealability":2,
-        "IncompatiableWith":[]
+        "IncompatiableWith":["Sawed-Off Shotgun Barrel (Kit Installed)", "Barrel Extension", "Barrel Reduction" ]
     },
     "Imaging Systems (Flashlight)":{
         "Name":"Imaging Systems (Flashlight)",
@@ -672,7 +674,7 @@ const Modifications = {
         "Weight":.75,
         "FCU":-.25,
         "DP":10,
-        "IncompatiableWith":[]
+        "IncompatiableWith":["Underbarrel Weapon (Flamethrower)", "Underbarrel Weapon (Grenade Launcher)","Underbarrel Weapon (Gapple Gun)"]
     },
     "Underbarrel Weapon (Gapple Gun)":{
         "Name":"Underbarrel Weapon (Gapple Gun)",
@@ -684,7 +686,7 @@ const Modifications = {
         "Weight":2,
         "FCU":-.25,
         "DP":100,
-        "IncompatiableWith":[]
+        "IncompatiableWith":["Underbarrel Weapon (Flamethrower)", "Underbarrel Weapon (Grenade Launcher)","Underbarrel Weapon (Bayonet)"]
     },
     "Underbarrel Weapon (Grenade Launcher)":{
         "Name":"Underbarrel Weapon (Grenade Launcher)",
@@ -696,7 +698,7 @@ const Modifications = {
         "Weight":2,
         "FCU":-.25,
         "DP":360,
-        "IncompatiableWith":[]
+        "IncompatiableWith":["Underbarrel Weapon (Flamethrower)", "Underbarrel Weapon (Gapple Gun)","Underbarrel Weapon (Bayonet)"]
     },
     "Underbarrel Weapon (Flamethrower)":{
         "Name":"Underbarrel Weapon (Flamethrower)",
@@ -708,7 +710,7 @@ const Modifications = {
         "Weight":0,
         "FCU":-.25,
         "DP":240,
-        "IncompatiableWith":[]
+        "IncompatiableWith":["Underbarrel Weapon (Grenade Launcher)", "Underbarrel Weapon (Gapple Gun)","Underbarrel Weapon (Bayonet)"]
     }
 }
 export default Modifications;

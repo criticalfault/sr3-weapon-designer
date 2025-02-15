@@ -55,23 +55,20 @@ return (
                 return (    
                         <div key={index} className='row'>
                             <div className='col'>{item}:  
-                                <label>
-                                    <select onChange={props.onChangeWeaponMount} value={props.weaponMounts[item]}>
-                                        <option>None</option>
+                                <label> 
                                     {
                                         props.installedParts.map((key, index2) => {
                                             if(key.Mount === item){
-                                                return (<option key={index2} name={key.Name}>{key.Name}</option>)
+                                                return (<span key={index2} name={key.Name}>{key.Name}</span>)
                                             }else{
                                                 return;
                                             }  
                                         })
-                                    }
-                                    </select>
+                                    }                
                                 </label>
                             </div>
                         </div>
-                        )
+                    )
             })
         }
         </div>

@@ -168,6 +168,8 @@ const Options = {
         "DP":80,
         "FCU":-.25,
         "Weight":.25,
+        "HasLevels":true,
+        "MaxLevels":3,
         "IncompatiableWith":[],
         "Power":1
     },
