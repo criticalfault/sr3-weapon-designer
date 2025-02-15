@@ -31,7 +31,8 @@ const Modifications = {
         "Weight":.5,
         "FCU":-.5,
         "DP":90,
-        "RC":2
+        "RC":2,
+        "IncompatiableWith":["Gas Vent III"]
     },
     "Gas Vent III":{
         "Name":"Gas Vent III",
@@ -43,7 +44,8 @@ const Modifications = {
         "Weight":.75,
         "FCU":-.75,
         "DP":140,
-        "RC":3
+        "RC":3,
+        "IncompatiableWith":[],
     },
     "Gas Vent IV":{
         "Name":"Gas Vent IV",
@@ -55,7 +57,8 @@ const Modifications = {
         "Weight":.75,
         "FCU":-1,
         "DP":200,
-        "RC":4
+        "RC":4,
+        "IncompatiableWith":[],
     },
     "Safe Target System":{
         "Name":"Safe Target System",
@@ -67,6 +70,7 @@ const Modifications = {
         "Weight":1,
         "FCU":-.25,
         "DP":40,
+        "IncompatiableWith":[],
     },
     "Smartgun System (Internal)":{
         "Name":"Smartgun System (Internal)",
@@ -77,7 +81,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"frame base DPV"
+        "DP":"frame base DPV",
+        "IncompatiableWith":[],
     },
     "Smartgun System 2 (Internal) - Hold-Out Pistol":{
         "Name":"Smartgun System 2 (Internal)",
@@ -88,7 +93,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"38"
+        "DP":"38",
+        "IncompatiableWith":[],
     },
     "Smartgun System 2 (Internal) - Light Pistol":{
         "Name":"Smartgun System 2 (Internal)",
@@ -99,7 +105,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"135"
+        "DP":"135",
+        "IncompatiableWith":[],
     },
     "Smartgun System 2 (Internal) - Machine Pistol":{
         "Name":"Smartgun System 2 (Internal)",
@@ -110,7 +117,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"270"
+        "DP":"270",
+        "IncompatiableWith":[],
     },
     "Smartgun System 2 (Internal) - Heavy Pistol":{
         "Name":"Smartgun System 2 (Internal)",
@@ -121,7 +129,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"180"
+        "DP":"180",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Submachine Gun":{
         "Name":"Smartgun System 2 (Internal)",
@@ -132,7 +141,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"150"
+        "DP":"150",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Shotgun":{
         "Name":"Smartgun System 2 (Internal)",
@@ -143,7 +153,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"195"
+        "DP":"195",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Taser":{
         "Name":"Smartgun System 2 (Internal)",
@@ -154,7 +165,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"300"
+        "DP":"300",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Sport Rifle":{
         "Name":"Smartgun System 2 (Internal)",
@@ -165,7 +177,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"188"
+        "DP":"188",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Assault Rifle":{
         "Name":"Smartgun System 2 (Internal)",
@@ -176,7 +189,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"338"
+        "DP":"338",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Sniper Rifle":{
         "Name":"Smartgun System 2 (Internal)",
@@ -187,7 +201,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"1200"
+        "DP":"1200",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Light Machine Gun":{
         "Name":"Smartgun System 2 (Internal)",
@@ -198,7 +213,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"638"
+        "DP":"638",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Medium Machine Gun":{
         "Name":"Smartgun System 2 (Internal)",
@@ -209,7 +225,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"1050"
+        "DP":"1050",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Heavy Machine Gun":{
         "Name":"Smartgun System 2 (Internal)",
@@ -220,7 +237,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"1500"
+        "DP":"1500",
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (Internal) - Assault Cannon":{
         "Name":"Smartgun System 2 (Internal)",
@@ -231,7 +249,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.5,
         "FCU":-.5,
-        "DP":"2100"
+        "DP":"2100",
+        "IncompatiableWith":[]
     },
     "Smartgun System (External)":{
         "Name": "Smartgun System (External)",
@@ -242,7 +261,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.5,
         "FCU":-.25,
-        "DP":120
+        "DP":120,
+        "IncompatiableWith":[]
     },
     "Smartgun System 2 (External)":{
         "Name": "Smartgun System 2 (External)",
@@ -253,7 +273,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.5,
         "FCU":-.25,
-        "DP":160
+        "DP":160,
+        "IncompatiableWith":[]
     },
     "Voice Activation":{
         "Name":"Voice Activation",
@@ -264,7 +285,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.1,
         "FCU":-.25,
-        "DP":50
+        "DP":50,
+        "IncompatiableWith":[]
     },
     "Biometric Safety":{
         "Name":"Biometric Safety",
@@ -275,7 +297,8 @@ const Modifications = {
         "Tools":"Shop",
         "Weight":.1,
         "FCU":-.25,
-        "DP":450
+        "DP":450,
+        "IncompatiableWith":[]
     },
     "Bipod":{
         "Name":"Bipod",
@@ -286,7 +309,8 @@ const Modifications = {
         "Tools":"kit",
         "Weight":2,
         "FCU":0,
-        "DP":80
+        "DP":80,
+        "IncompatiableWith":[]
     },
     "Extended Clip":{
         "Name":"Extended Clip",
@@ -298,7 +322,8 @@ const Modifications = {
         "Weight":2,
         "FCU":0,
         "DP":2,
-        "Extra":"+1 Round Added"
+        "Extra":"+1 Round Added",
+        "IncompatiableWith":[]
     },
     "Foregrip":{
         "Name":"Foregrip",
@@ -310,7 +335,8 @@ const Modifications = {
         "Weight":.5,
         "FCU":0,
         "DP":50,
-        "RC":1
+        "RC":1,
+        "IncompatiableWith":[]
     },
     "Full Auto":{
         "Name":"Foregrip",
@@ -322,7 +348,8 @@ const Modifications = {
         "Weight":.5,
         "FCU":-1,
         "DP":120,
-        "RC":-1
+        "RC":-1,
+        "IncompatiableWith":[]
     },
     "Laser Sight (Low-power)":{
         "Name":"Laser Sight (Low-power)",
@@ -333,7 +360,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":100
+        "DP":100,
+        "IncompatiableWith":[]
     },
     "Laser Sight (High-power)":{
         "Name":"Laser Sight (High-power)",
@@ -344,7 +372,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":280
+        "DP":280,
+        "IncompatiableWith":[]
     },
     "Laser Target Designator":{
         "Name":"Laser Target Designator",
@@ -355,7 +384,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.5,
         "FCU":-.25,
-        "DP":740
+        "DP":740,
+        "IncompatiableWith":[]
     },
     "Personalized Grip":{
         "Name":"Personalized Grip",
@@ -367,7 +397,8 @@ const Modifications = {
         "Weight":0,
         "FCU":0,
         "DP":25,
-        "RC":1
+        "RC":1,
+        "IncompatiableWith":[]
     },
     "Range Finder":{
         "Name":"Range Finder",
@@ -378,7 +409,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.1,
         "FCU":-.25,
-        "DP":30
+        "DP":30,
+        "IncompatiableWith":[]
     },
     "Underbarrel Weight":{
         "Name":"Underbarrel Weight",
@@ -390,7 +422,8 @@ const Modifications = {
         "Weight":1,
         "FCU":-.25,
         "DP":25,
-        "RC":1
+        "RC":1,
+        "IncompatiableWith":[]
     },
     "Remove Safety":{
         "Name":"Remove Safety",
@@ -401,7 +434,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":0,
         "FCU":0,
-        "DP":30
+        "DP":30,
+        "IncompatiableWith":[]
     },
     "Remove Trigger":{
         "Name":"Remove Trigger",
@@ -413,7 +447,8 @@ const Modifications = {
         "Weight":0,
         "FCU":-.5,
         "DP":50,
-        "Extra":"Must have Smartlink to Fire"
+        "Extra":"Must have Smartlink to Fire",
+        "IncompatiableWith":[]
     },
     "Tripod":{
         "Name":"Tripod",
@@ -424,7 +459,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":8,
         "FCU":0,
-        "DP":120
+        "DP":120,
+        "IncompatiableWith":[]
     },
     "Sound Suppressor":{
         "Name":"Sound Suppressor",
@@ -435,7 +471,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.5,
         "FCU":-.25,
-        "DP":150
+        "DP":150,
+        "IncompatiableWith":[]
     },
     "Ultrasound Sight":{
         "Name":"Ultrasound Sight",
@@ -446,7 +483,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":260
+        "DP":260,
+        "IncompatiableWith":[]
     },
     "Silencer":{
         "Name":"Silencer",
@@ -457,7 +495,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.2,
         "FCU":-.25,
-        "DP":100
+        "DP":100,
+        "IncompatiableWith":[]
     },
     "Rigid Stocks":{
         "Name":"Rigid Stocks",
@@ -470,7 +509,8 @@ const Modifications = {
         "FCU":0,
         "DP":40,
         "RC":1,
-        "Concealability":-1
+        "Concealability":-1,
+        "IncompatiableWith":[]
     },
     "Folding Stock":{
         "Name":"Folding Stock",
@@ -482,7 +522,8 @@ const Modifications = {
         "Weight":.5,
         "FCU":0,
         "DP":40,
-        "RC":1
+        "RC":1,
+        "IncompatiableWith":[]
     },
     "Shock Pads":{
         "Name":"Folding Stock",
@@ -494,7 +535,8 @@ const Modifications = {
         "Weight":2.5,
         "FCU":0,
         "DP":40,
-        "RC":1
+        "RC":1,
+        "IncompatiableWith":[]
     },
     "Hip Pads":{
         "Name":"Folding Stock",
@@ -506,7 +548,8 @@ const Modifications = {
         "Weight":2,
         "FCU":0,
         "DP":40,
-        "RC":1
+        "RC":1,
+        "IncompatiableWith":[]
     },
     "Sawed-Off Shotgun Barrel (Kit Installed)":{
         "Name":"Sawed-Off Shotgun Barrel (Kit Installed)",
@@ -519,7 +562,8 @@ const Modifications = {
         "FCU":0,
         "DP":8,
         "Concealability":2,
-        "Extra":"+1 TN on all shots"
+        "Extra":"+1 TN on all shots",
+        "IncompatiableWith":[]
     },
     "Sawed-Off Shotgun Barrel (Shop Installed)":{
         "Name":"Sawed-Off Shotgun Barrel (Shop Installed)",
@@ -531,7 +575,8 @@ const Modifications = {
         "Weight":-1,
         "FCU":0,
         "DP":8,
-        "Concealability":2
+        "Concealability":2,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Flashlight)":{
         "Name":"Imaging Systems (Flashlight)",
@@ -543,6 +588,7 @@ const Modifications = {
         "Weight":.25,
         "FCU":-.25,
         "DP":25,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Gun Cam)":{
         "Name":"Imaging Systems (Gun Cam)",
@@ -554,6 +600,7 @@ const Modifications = {
         "Weight":.25,
         "FCU":-.25,
         "DP":400,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Low-light)":{
         "Name":"Imaging Systems (Low-light)",
@@ -565,6 +612,7 @@ const Modifications = {
         "Weight":.25,
         "FCU":-.25,
         "DP":300,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Magnification 1)":{
         "Name":"Imaging Systems (Magnification 1)",
@@ -575,7 +623,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":100
+        "DP":100,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Magnification 2)":{
         "Name":"Imaging Systems (Magnification 2)",
@@ -586,7 +635,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":160
+        "DP":160,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Magnification 3)":{
         "Name":"Imaging Systems (Magnification 3)",
@@ -597,7 +647,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":240
+        "DP":240,
+        "IncompatiableWith":[]
     },
     "Imaging Systems (Thermographic)":{
         "Name":"Imaging Systems (Thermographic)",
@@ -608,7 +659,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.25,
         "FCU":-.25,
-        "DP":300
+        "DP":300,
+        "IncompatiableWith":[]
     },
     "Underbarrel Weapon (Bayonet)":{
         "Name":"Underbarrel Weapon (Bayonet)",
@@ -619,7 +671,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":.75,
         "FCU":-.25,
-        "DP":10
+        "DP":10,
+        "IncompatiableWith":[]
     },
     "Underbarrel Weapon (Gapple Gun)":{
         "Name":"Underbarrel Weapon (Gapple Gun)",
@@ -630,7 +683,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":2,
         "FCU":-.25,
-        "DP":100
+        "DP":100,
+        "IncompatiableWith":[]
     },
     "Underbarrel Weapon (Grenade Launcher)":{
         "Name":"Underbarrel Weapon (Grenade Launcher)",
@@ -641,7 +695,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":2,
         "FCU":-.25,
-        "DP":360
+        "DP":360,
+        "IncompatiableWith":[]
     },
     "Underbarrel Weapon (Flamethrower)":{
         "Name":"Underbarrel Weapon (Flamethrower)",
@@ -652,7 +707,8 @@ const Modifications = {
         "Tools":"Kit",
         "Weight":0,
         "FCU":-.25,
-        "DP":240
+        "DP":240,
+        "IncompatiableWith":[]
     }
 }
 export default Modifications;

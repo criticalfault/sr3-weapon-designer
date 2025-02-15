@@ -7,7 +7,6 @@ import weaponFrames from './components/WeaponFrames.js';
 import WeaponOptionsPossible from './components/WeaponOptions.js';
 import WeaponModifications from './components/WeaponModifications.js';
 import LoadWeapon from "./components/LoadWeapon";
-import Modifications from './components/WeaponModifications.js';
 
 function App() {
   const [weaponName, setWeaponName] = useState('Temp Name');

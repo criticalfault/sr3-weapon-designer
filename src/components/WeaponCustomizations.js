@@ -1,5 +1,6 @@
 import React from 'react';
 import './WeaponCustomizations.css';
+import { ToastContainer, toast } from "react-toastify";
 
 const WeaponCustomization = (props) => {
 
@@ -13,15 +14,23 @@ const WeaponCustomization = (props) => {
       }
       
       let found = false;
+      let Incompatiable = false;
       for (const key2 of installedKeys) {
         if(props.installedParts[key2].Name === key){
           found = true;
+          toast(props.installedParts[key2].Name + " already installed");
+        }
+        if(props.installedParts[key2].hasOwnProperty('IncompatiableWith') && props.installedParts[key2].IncompatiableWith.indexOf(key) !== -1){
+          Incompatiable = true;
+          toast(props.installedParts[key2].Name+" Incompatiable with "+key);
         }
       }
 
-      if(found === false){
+
+
+      if(found === false && Incompatiable === false){
         props.installPart(prevInstalledParts => [...prevInstalledParts, partToInstall]);
-      }      
+      }
     }
 
     function uninstallPart(key){
@@ -48,6 +57,17 @@ const WeaponCustomization = (props) => {
 
     return(
         <div className='row'>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
             <h2>Options</h2>
               <div className='col-12 col-sm-4'>
                 <h3>Design Options</h3>
