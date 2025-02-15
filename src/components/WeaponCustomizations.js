@@ -1,5 +1,6 @@
 import React from 'react';
 import './WeaponCustomizations.css';
+import { ToastContainer, toast } from "react-toastify";
 
 const WeaponCustomization = (props) => {
 
@@ -13,15 +14,31 @@ const WeaponCustomization = (props) => {
       }
       
       let found = false;
+      let Incompatiable = false;
+      let mountUsed = false;
+      let mountsUsed = [];
       for (const key2 of installedKeys) {
         if(props.installedParts[key2].Name === key){
           found = true;
+          toast(props.installedParts[key2].Name + " already installed");
+        }
+        if(props.installedParts[key2].hasOwnProperty('IncompatiableWith') && props.installedParts[key2].IncompatiableWith.indexOf(key) !== -1){
+          Incompatiable = true;
+          toast(props.installedParts[key2].Name+" Incompatiable with "+key);
+        }
+        if(props.installedParts[key2].hasOwnProperty('Mount') && props.installedParts[key2].Mount !== "None"){
+          mountsUsed.push(props.installedParts[key2].Mount);
         }
       }
 
-      if(found === false){
+      if(found === false && mountsUsed.indexOf(partToInstall.Mount) !== -1){
+        mountUsed = true;
+        toast(partToInstall.Name+" uses "+partToInstall.Mount+". Which is full");
+      }
+
+      if(found === false && Incompatiable === false && mountUsed === false){
         props.installPart(prevInstalledParts => [...prevInstalledParts, partToInstall]);
-      }      
+      }
     }
 
     function uninstallPart(key){
@@ -35,8 +52,31 @@ const WeaponCustomization = (props) => {
       props.installPart([...editedParts]);
     }
 
+    function HasLevels(part,index){
+      if(part.HasLevels === true){
+        let arrayToWalk = [...Array(part.MaxLevels).keys()];
+        return (<label key={index}>Level: {
+            arrayToWalk.map(function(level){
+              return (<label key={index+level} className='levelRadioLabel'>{level+1}<input type='radio' name='{part.WeaponName}Levels' value={level+1} /></label>)
+            })
+          }  </label>);
+      }
+
+    }
+
     return(
         <div className='row'>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
             <h2>Options</h2>
               <div className='col-12 col-sm-4'>
                 <h3>Design Options</h3>
@@ -62,11 +102,9 @@ const WeaponCustomization = (props) => {
                   <ul id="Modifications"> 
                     {
                       props.WeaponModifications.map((key) => {
-                        console.log(key);
-                        console.log(props.Modifications);
                         let mod = props.Modifications[key];
                         if(props.weaponFrame.Mounts.indexOf(mod.Mount) === -1 && mod.Mount !== 'None'){
-                          
+                          return;
                         }else{
                           return (<li key={key} onClick={() => { installPart(key, 'Mod') }} className="btn btn-secondary">{key}
                                     <span> 
@@ -85,14 +123,18 @@ const WeaponCustomization = (props) => {
                 <h3>Installed</h3>
                 <ul id='Installed'>
                   { props.installedParts.map((part, index) => (
-                    <li key={index} onClick={() => { uninstallPart(part.Name) }} className='btn btn-info'> 
-                      <span>
+                    <li key={index} className='btn btn-info'> 
+                      <span onClick={() => { uninstallPart(part.Name) }} >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-circle" viewBox="0 0 16 16">
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
                         </svg>
                         </span>
                         {part.Name}
+                        {
+                          HasLevels(part,index)
+                        }
+                        
                     </li>
                     )
                   )

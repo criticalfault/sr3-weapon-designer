@@ -54,9 +54,21 @@ return (
             props.weaponMounts.map((item, index) => {
                 return (    
                         <div key={index} className='row'>
-                            <div className='col'>{item}: Nothing</div>
+                            <div className='col'>{item}:  
+                                <label> 
+                                    {
+                                        props.installedParts.map((key, index2) => {
+                                            if(key.Mount === item){
+                                                return (<span key={index2} name={key.Name}>{key.Name}</span>)
+                                            }else{
+                                                return;
+                                            }  
+                                        })
+                                    }                
+                                </label>
+                            </div>
                         </div>
-                        )
+                    )
             })
         }
         </div>
