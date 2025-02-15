@@ -37,7 +37,6 @@ const WeaponCustomization = (props) => {
 
     function HasLevels(part,index){
       if(part.HasLevels === true){
-        //<input className='hasLevelNumeric' type='numeric' value={1} max={part.MaxLevels} min={1} />
         let arrayToWalk = [...Array(part.MaxLevels).keys()];
         return (<label key={index}>Level: {
             arrayToWalk.map(function(level){
@@ -105,7 +104,6 @@ const WeaponCustomization = (props) => {
                         {part.Name}
                         {
                           HasLevels(part,index)
-                          
                         }
                         
                     </li>

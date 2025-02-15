@@ -54,7 +54,22 @@ return (
             props.weaponMounts.map((item, index) => {
                 return (    
                         <div key={index} className='row'>
-                            <div className='col'>{item}: Nothing</div>
+                            <div className='col'>{item}:  
+                                <label>
+                                    <select onChange={props.onChangeWeaponMount} value={props.weaponMounts[item]}>
+                                        <option>None</option>
+                                    {
+                                        props.installedParts.map((key, index2) => {
+                                            if(key.Mount === item){
+                                                return (<option key={index2} name={key.Name}>{key.Name}</option>)
+                                            }else{
+                                                return;
+                                            }  
+                                        })
+                                    }
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         )
             })

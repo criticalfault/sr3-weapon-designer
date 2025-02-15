@@ -151,6 +151,11 @@ function App() {
     setInstalledParts(weapon.WeaponInstalledParts);
   }
 
+  const onChangeWeaponMount = (event) => {
+    console.log("Weapon Mount Changed");
+    console.log(event);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -179,6 +184,7 @@ function App() {
           </div>
           <div className='col-12 col-sm-6'>
           <WeaponFrameWindow
+            installedParts={installedParts}
             setWeaponName={setWeaponName} 
             weaponName={weaponName}
             weaponFrame={weaponFrame}
@@ -186,6 +192,7 @@ function App() {
             weaponDamage={weaponDamage}
             weaponModes={weaponModes}
             weaponMounts={weaponMounts}
+            onChangeWeaponMount={onChangeWeaponMount}
             weaponConcealability={weaponConcealability}
             weaponWeight={weaponWeight}
             weaponLoad={weaponLoad}
