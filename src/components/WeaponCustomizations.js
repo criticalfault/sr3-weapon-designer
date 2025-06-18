@@ -1,6 +1,9 @@
 import React from 'react';
 import './WeaponCustomizations.css';
 import { ToastContainer, toast } from "react-toastify";
+import { Typography, Grid, List, ListItem, Button, Radio, RadioGroup, FormControlLabel, Box } from '@mui/material';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const WeaponCustomization = (props) => {
 
@@ -52,98 +55,111 @@ const WeaponCustomization = (props) => {
       props.installPart([...editedParts]);
     }
 
-    function HasLevels(part,index){
+    function HasLevels(part, index){
       if(part.HasLevels === true){
         let arrayToWalk = [...Array(part.MaxLevels).keys()];
-        return (<label key={index}>Level: {
-            arrayToWalk.map(function(level){
-              return (<label key={index+level} className='levelRadioLabel'>{level+1}<input type='radio' name='{part.WeaponName}Levels' value={level+1} /></label>)
-            })
-          }  </label>);
+        return (
+          <Box key={index} sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
+            <Typography variant="body2" sx={{ mr: 1 }}>Level:</Typography>
+            <RadioGroup row name={`${part.WeaponName}Levels`}>
+              {arrayToWalk.map((level) => (
+                <FormControlLabel 
+                  key={index+level} 
+                  value={level+1} 
+                  control={<Radio size="small" />} 
+                  label={level+1} 
+                  sx={{ mr: 0.5 }}
+                />
+              ))}
+            </RadioGroup>
+          </Box>
+        );
       }
-
+      return null;
     }
 
     return(
-        <div className='row'>
-            <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick={false}
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-            <h2>Options</h2>
-              <div className='col-12 col-sm-4'>
-                <h3>Design Options</h3>
-                  <ul id="Customizations">
-                  {
-                    props.Options.map((key, index) => {
-                      return (
-                          <li key={key} onClick={() => { installPart(key, "Opt") }} className="btn btn-primary">{key} 
-                            <span> 
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                              </svg> 
-                            </span>
-                          </li>
-                        )
-                      }
-                    )
-                  }   
-                  </ul>
-                </div>
-                <div className='col-12 col-sm-4'>
-                  <h3>Modifications</h3>
-                  <ul id="Modifications"> 
-                    {
-                      props.WeaponModifications.map((key) => {
-                        let mod = props.Modifications[key];
-                        if(props.weaponFrame.Mounts.indexOf(mod.Mount) === -1 && mod.Mount !== 'None'){
-                          return;
-                        }else{
-                          return (<li key={key} onClick={() => { installPart(key, 'Mod') }} className="btn btn-secondary">{key}
-                                    <span> 
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                                      </svg> 
-                                    </span>
-                                  </li>)
-                        }
-                        
-                      })
-                    }
-                  </ul>
-                </div>
-            <div className='col-12 col-sm-4'>
-                <h3>Installed</h3>
-                <ul id='Installed'>
-                  { props.installedParts.map((part, index) => (
-                    <li key={index} className='btn btn-info'> 
-                      <span onClick={() => { uninstallPart(part.Name) }} >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-circle" viewBox="0 0 16 16">
-                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                        </svg>
-                        </span>
-                        {part.Name}
-                        {
-                          HasLevels(part,index)
-                        }
-                        
-                    </li>
-                    )
-                  )
-                  }
-                </ul>
-            </div>
-          </div>
-    )
-    
+      <Grid container spacing={3}>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        
+        <Grid item xs={12} sm={4}>
+          <Typography variant="h5" component="h3" gutterBottom>Design Options</Typography>
+          <List>
+            {props.Options.map((key, index) => (
+              <ListItem key={key} disableGutters>
+                <Button 
+                  variant="contained" 
+                  color="primary" 
+                  onClick={() => { installPart(key, "Opt") }}
+                  endIcon={<AddCircleIcon />}
+                  fullWidth
+                  sx={{ justifyContent: 'space-between', textAlign: 'left' }}
+                >
+                  {key}
+                </Button>
+              </ListItem>
+            ))}
+          </List>
+        </Grid>
+        
+        <Grid item xs={12} sm={4}>
+          <Typography variant="h5" component="h3" gutterBottom>Modifications</Typography>
+          <List>
+            {props.WeaponModifications.map((key) => {
+              let mod = props.Modifications[key];
+              if(props.weaponFrame.Mounts.indexOf(mod.Mount) === -1 && mod.Mount !== 'None'){
+                return null;
+              } else {
+                return (
+                  <ListItem key={key} disableGutters style={{'maxWidth':'250px'}}>
+                    <Button 
+                      variant="contained" 
+                      color="secondary" 
+                      onClick={() => { installPart(key, 'Mod') }}
+                      endIcon={<AddCircleIcon />}
+                      fullWidth
+                      sx={{ justifyContent: 'space-between', textAlign: 'left' }}
+                    >
+                      {key}
+                    </Button>
+                  </ListItem>
+                );
+              }
+            })}
+          </List>
+        </Grid>
+        
+        <Grid item xs={12} sm={4}>
+          <Typography variant="h5" component="h3" gutterBottom>Installed</Typography>
+          <List>
+            {props.installedParts.map((part, index) => (
+              <ListItem key={index} disableGutters>
+                <Button 
+                  variant="contained" 
+                  color="info" 
+                  startIcon={<CancelIcon onClick={() => { uninstallPart(part.Name) }} />}
+                  fullWidth
+                  sx={{ justifyContent: 'flex-start', textAlign: 'left' }}
+                >
+                  {part.Name}
+                  {HasLevels(part, index)}
+                </Button>
+              </ListItem>
+            ))}
+          </List>
+        </Grid>
+      </Grid>
+    );
 }
 
 export default WeaponCustomization;
