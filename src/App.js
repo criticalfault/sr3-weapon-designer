@@ -137,7 +137,7 @@ function App() {
     }
 
     onUpdateCustomizationsHandler(installedParts)
-  },[installedParts,weaponName])
+  },[installedParts,weaponName,weaponFrame])
 
   const handleLoadWeapon = (weapon) => {
     console.log(weapon)
@@ -283,9 +283,7 @@ function App() {
               />
             </Paper>
           </Grid>
-        </Grid>
-        <Grid container sx={{ mt: 3 }}>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6} style={{'width':'100%'}}>
             <Paper elevation={3} sx={synthwavePaperStyle}>
               <WeaponCustomization 
                 weaponFrame={weaponFrames[weaponFrame]} 

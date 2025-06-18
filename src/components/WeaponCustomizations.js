@@ -91,9 +91,6 @@ const WeaponCustomization = (props) => {
           draggable
           pauseOnHover
         />
-        <Grid item xs={12}>
-          <Typography variant="h4" component="h2" gutterBottom>Options</Typography>
-        </Grid>
         
         <Grid item xs={12} sm={4}>
           <Typography variant="h5" component="h3" gutterBottom>Design Options</Typography>
@@ -124,7 +121,7 @@ const WeaponCustomization = (props) => {
                 return null;
               } else {
                 return (
-                  <ListItem key={key} disableGutters>
+                  <ListItem key={key} disableGutters style={{'maxWidth':'250px'}}>
                     <Button 
                       variant="contained" 
                       color="secondary" 

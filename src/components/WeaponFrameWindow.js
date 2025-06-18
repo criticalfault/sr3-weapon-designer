@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, TextField, Grid, Box, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText, Paper, Divider } from '@mui/material';
+import { Typography, TextField, Grid, Box, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const WeaponFrameWindow = (props) => {
