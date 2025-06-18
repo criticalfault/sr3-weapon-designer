@@ -2,18 +2,26 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import { Grid2 } from "@mui/material";
-const style = {
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { styled } from "@mui/system";
+
+// Using styled API for MUI v7
+const ModalBox = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "background.paper",
+  backgroundColor: theme.vars.palette.background.paper,
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
-};
+  padding: theme.spacing(4),
+}));
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginBottom: theme.spacing(1),
+}));
 
 export default function LoadWeapon(props) {
   const [open, setOpen] = React.useState(false);
@@ -83,147 +91,153 @@ export default function LoadWeapon(props) {
     if (weaponJSON !== null) {
       let tempWeapon = JSON.parse(weaponJSON);
       return (
-        <span style={{ "textTransform": "capitalize" }}>
+        <Typography component="span" sx={{ textTransform: "capitalize" }}>
           {" "}
           - {tempWeapon.WeaponName}
-        </span>
+        </Typography>
       );
     }
+    return null;
   };
 
   return (
-    <div>
-      <Button onClick={SaveWeapon} variant="contained">
+    <Box>
+      <Button onClick={SaveWeapon} variant="contained" sx={{ mr: 1 }}>
         Save
       </Button>
-      &nbsp;&nbsp;
-      <Button onClick={handleOpen} variant="contained">
+      <Button onClick={handleOpen} variant="contained" sx={{ mr: 1 }}>
         Load
       </Button>
-      &nbsp;&nbsp;
       <Button onClick={handleOpenLocalStorage} variant="contained">
         Local Storage Save/Load
       </Button>
+      
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <label>
-            Import Weapon<br></br>
-            <br></br>
+        <ModalBox>
+          <Typography id="modal-modal-title" variant="h6" component="h2" gutterBottom>
+            Import Weapon
+          </Typography>
+          <Box component="label" sx={{ display: 'block', mt: 2 }}>
             <input type="file" name="characterLoad" onChange={LoadCharacter} />
-          </label>
-        </Box>
+          </Box>
+        </ModalBox>
       </Modal>
+      
       <Modal
         open={openLocalStorage}
         onClose={handleCloseLocalStorage}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-labelledby="local-storage-modal-title"
+        aria-describedby="local-storage-modal-description"
       >
-        <Box sx={style}>
-          <Grid2 container spacing={2}>
-            <Grid2 item xs={12}>
-              This uses your browsers storage mechanism to save/load weapons.
-              This is PER computer and PER browser. So its not for instance
-              available on your phone if you saved it on your PC. You'll need to
-              use the file save for that, but then you can save it on your
-              phone!
-            </Grid2>
-            <Grid2 item xs={12} md={6}>
-              Save Weapon
-              <hr></hr>
-              <Button
-                onClick={function (event) {
-                  localStroageSave(1);
-                }}
+        <ModalBox>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Typography variant="body1">
+                This uses your browsers storage mechanism to save/load weapons.
+                This is PER computer and PER browser. So its not for instance
+                available on your phone if you saved it on your PC. You'll need to
+                use the file save for that, but then you can save it on your
+                phone!
+              </Typography>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6" gutterBottom>Save Weapon</Typography>
+              <Box sx={{ borderTop: 1, borderColor: 'divider', pt: 1, mb: 2 }} />
+              
+              <StyledButton
+                variant="contained"
+                fullWidth
+                onClick={() => localStroageSave(1)}
               >
-                Save 1{" "}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageSave(2);
-                }}
+                Save 1
+              </StyledButton>
+              
+              <StyledButton
+                variant="contained"
+                fullWidth
+                onClick={() => localStroageSave(2)}
               >
-                Save 2{" "}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageSave(3);
-                }}
+                Save 2
+              </StyledButton>
+              
+              <StyledButton
+                variant="contained"
+                fullWidth
+                onClick={() => localStroageSave(3)}
               >
-                Save 3{" "}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageSave(4);
-                }}
+                Save 3
+              </StyledButton>
+              
+              <StyledButton
+                variant="contained"
+                fullWidth
+                onClick={() => localStroageSave(4)}
               >
-                Save 4{" "}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageSave(5);
-                }}
+                Save 4
+              </StyledButton>
+              
+              <StyledButton
+                variant="contained"
+                fullWidth
+                onClick={() => localStroageSave(5)}
               >
-                Save 5{" "}
-              </Button>
-              <br></br>
-            </Grid2>
-            <Grid2 item xs={12} md={6}>
-              Load Weapon
-              <hr></hr>
-              <Button
-                onClick={function (event) {
-                  localStroageLoad(1);
-                }}
+                Save 5
+              </StyledButton>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6" gutterBottom>Load Weapon</Typography>
+              <Box sx={{ borderTop: 1, borderColor: 'divider', pt: 1, mb: 2 }} />
+              
+              <StyledButton
+                variant="outlined"
+                fullWidth
+                onClick={() => localStroageLoad(1)}
               >
                 Load {getSaveDescription(1)}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageLoad(2);
-                }}
+              </StyledButton>
+              
+              <StyledButton
+                variant="outlined"
+                fullWidth
+                onClick={() => localStroageLoad(2)}
               >
                 Load {getSaveDescription(2)}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageLoad(3);
-                }}
+              </StyledButton>
+              
+              <StyledButton
+                variant="outlined"
+                fullWidth
+                onClick={() => localStroageLoad(3)}
               >
                 Load {getSaveDescription(3)}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageLoad(4);
-                }}
+              </StyledButton>
+              
+              <StyledButton
+                variant="outlined"
+                fullWidth
+                onClick={() => localStroageLoad(4)}
               >
                 Load {getSaveDescription(4)}
-              </Button>
-              <br></br>
-              <Button
-                onClick={function (event) {
-                  localStroageLoad(5);
-                }}
+              </StyledButton>
+              
+              <StyledButton
+                variant="outlined"
+                fullWidth
+                onClick={() => localStroageLoad(5)}
               >
                 Load {getSaveDescription(5)}
-              </Button>
-              <br></br>
-            </Grid2>
-          </Grid2>
-        </Box>
+              </StyledButton>
+            </Grid>
+          </Grid>
+        </ModalBox>
       </Modal>
-    </div>
+    </Box>
   );
 }

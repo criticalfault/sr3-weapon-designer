@@ -1,4 +1,7 @@
 import React from 'react';
+import { Typography, TextField, Grid, Box, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText, Paper, Divider } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 const WeaponFrameWindow = (props) => {
 
 const damageLevel = {
@@ -14,109 +17,149 @@ const damageLevel = {
 
 function showNegativeAsRed(num){
     if(num < 0){
-        return ( <span className='negative'>{num}</span>);
+        return ( <Typography component="span" sx={{ color: 'error.main' }}>{num}</Typography>);
     }else{
-        return ( <span>{num}</span>);
+        return ( <Typography component="span">{num}</Typography>);
     }
 }
 
 return (
-    <div>
-    <div className='col text-left borderLinesSub' id='weaponFrame'>
-        <div className="row">
-            <div>Weapon Name: <input value={props.weaponName} onChange={(e) => props.setWeaponName(e.target.value)} /></div>
-        </div>
-        <div className="row">
-            <div>Weapon Frame: {props.weaponFrame}</div>
-        </div>
-        <div className='row'>
-            <div className='col'>Damage Code: {props.weaponPower}{damageLevel[props.weaponDamage]}</div>
-            <div className='col'>Mode: { props.weaponModes.join(',')}</div>
-        </div>
-        <div className='row'>
-            <div className='col'>Concealability: {props.weaponConcealability}</div>
-            <div className='col'>Recoil Comp: {props.weaponRecoilComp}</div>
-        </div>
-        <div className='row'>
-            <div className='col'>Weight: {props.weaponWeight.toFixed(2)}</div>
-            <div className='col'>Ammo Cap: {props.weaponAmmoCap}</div>
-            <div className='col'>Ammo Load: {props.weaponLoad}</div>
-           
-        </div>
-        <div className='row'>
-            <div className='col'>FCU: {showNegativeAsRed(props.weaponFCU)} </div>
-            <div className='col'>DPV: {props.weaponDPV}</div>
-        </div>
-        <div className='row'>
-            <div>Final Cost: {props.weaponFinalCost}¥</div>
-        </div>
-        {
-            props.weaponMounts.map((item, index) => {
-                return (    
-                        <div key={index} className='row'>
-                            <div className='col'>{item}:  
-                                <label> 
-                                    {
-                                        props.installedParts.map((key, index2) => {
-                                            if(key.Mount === item){
-                                                return (<span key={index2} name={key.Name}>{key.Name}</span>)
-                                            }else{
-                                                return;
-                                            }  
-                                        })
-                                    }                
-                                </label>
-                            </div>
-                        </div>
-                    )
-            })
-        }
-        </div>
-            <div className="accordion" id="accordionExample">
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingOne">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded={"true"} aria-controls="collapseOne">
-                        Weapon Notes
-                    </button>
-                    </h2>
-                    <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
-                            
-                            <ul>
-                                {props.weaponNotes.map((item,index)=>{
-                                    return ( <li key={index}>{item}</li>)
-                                })}
-                            </ul>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Build Notes
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
-                            <ul>
-                                {props.weaponBuildNotes.map((item,index)=>{
-                                    return ( <li key={index}>
-                                                {item.Name} <ul>
-                                                        <li>TN:{item.InstallTN} / {item.InstallTime}</li> 
-                                                        <li>Requires {item.Tools} - {item.Skill}</li>
-                                                    </ul> 
-                
-                                            </li>)
-                                })}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <Box>
+      <Box sx={{ p: 2, mb: 2 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField 
+              fullWidth
+              label="Weapon Name" 
+              value={props.weaponName} 
+              onChange={(e) => props.setWeaponName(e.target.value)}
+              variant="outlined"
+              margin="normal"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="subtitle1">
+              <strong>Weapon Frame:</strong> {props.weaponFrame}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              <strong>Damage Code:</strong> {props.weaponPower}{damageLevel[props.weaponDamage]}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              <strong>Mode:</strong> {props.weaponModes.join(',')}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              <strong>Concealability:</strong> {props.weaponConcealability}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              <strong>Recoil Comp:</strong> {props.weaponRecoilComp}
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography variant="body1">
+              <strong>Weight:</strong> {props.weaponWeight.toFixed(2)}
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography variant="body1">
+              <strong>Ammo Cap:</strong> {props.weaponAmmoCap}
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography variant="body1">
+              <strong>Ammo Load:</strong> {props.weaponLoad}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              <strong>FCU:</strong> {showNegativeAsRed(props.weaponFCU)}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="body1">
+              <strong>DPV:</strong> {props.weaponDPV}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6">
+              Final Cost: {props.weaponFinalCost}¥
+            </Typography>
+          </Grid>
+          
+          {props.weaponMounts.map((item, index) => (
+            <Grid item xs={12} key={index}>
+              <Typography variant="body1">
+                <strong>{item}:</strong> {
+                  props.installedParts.map((key, index2) => {
+                    if(key.Mount === item){
+                      return (<Typography component="span" key={index2}>{key.Name}</Typography>)
+                    }
+                    return null;
+                  })
+                }
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+      
+      <Box sx={{ mt: 2 }}>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="weapon-notes-content"
+            id="weapon-notes-header"
+          >
+            <Typography>Weapon Notes</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <List>
+              {props.weaponNotes.map((item, index) => (
+                <ListItem key={index}>
+                  <ListItemText primary={item} />
+                </ListItem>
+              ))}
+            </List>
+          </AccordionDetails>
+        </Accordion>
         
-        </div>
-    );
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="build-notes-content"
+            id="build-notes-header"
+          >
+            <Typography>Build Notes</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <List>
+              {props.weaponBuildNotes.map((item, index) => (
+                <ListItem key={index}>
+                  <ListItemText 
+                    primary={item.Name}
+                    secondary={
+                      <>
+                        <Typography component="span" variant="body2">TN: {item.InstallTN} / {item.InstallTime}</Typography>
+                        <br />
+                        <Typography component="span" variant="body2">Requires {item.Tools} - {item.Skill}</Typography>
+                      </>
+                    }
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </AccordionDetails>
+        </Accordion>
+      </Box>
+    </Box>
+  );
 }
 
 export default WeaponFrameWindow;
