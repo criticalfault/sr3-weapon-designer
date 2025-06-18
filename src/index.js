@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import theme from './theme';
+import { ThemeProvider2 as CustomThemeProvider } from './context/ThemeContext';
+import './synthwave.css'; // Import synthwave CSS globally
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CssVarsProvider theme={theme}>
-      <CssBaseline />
+    <CustomThemeProvider>
       <App />
-    </CssVarsProvider>
+    </CustomThemeProvider>
   </React.StrictMode>
 );
 
