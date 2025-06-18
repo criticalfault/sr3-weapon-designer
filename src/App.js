@@ -166,7 +166,6 @@ function App() {
 
   return (
     <Box className="App" sx={{ minHeight: '100vh', position: 'relative', zIndex: 1 }}>
-      <div className="retro-sun"></div>
       <Box 
         sx={{ 
           background: 'linear-gradient(90deg, #ff2a6d 0%, #05d9e8 100%)',
